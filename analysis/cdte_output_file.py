@@ -110,7 +110,7 @@ def get_file_data(filename, outfile, header=False):
     # Append this result to the CSV file
 
     outstream = open(outfile, "a", newline="")
-    w = csv.DictWriter(f, resdict.keys())
+    w = csv.DictWriter(outstream, resdict.keys())
     if header:
         w.writeheader()
         w.writerow(resdict)
