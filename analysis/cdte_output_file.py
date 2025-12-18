@@ -10,7 +10,9 @@ import csv
 def main():
     
     resdir = sys.argv[1]
-    outfile = sys.argv[2]
+    test_label = sys.argv[2]
+    system_name = sys.argv[3]
+    outfile = sys.argv[4]
 
     # Here we generate the list of files from a directory name
     searchstr = resdir + "/*.OUTCAR"
@@ -21,12 +23,12 @@ def main():
     for file in filelist:
         print(file)
         if first:
-            get_file_data(file, outfile, header=True)
+            get_file_data(file, test_label, system_name, outfile, header=True)
             first = False
         else:
-            get_file_data(file, outfile)
+            get_file_data(file, test_label, system_name, outfile)
 
-def get_file_data(filename, outfile, header=False):
+def get_file_data(filename, test_label, system_name, outfile, header=False):
     """Extract the details from output
     """
     infile = open(filename, 'r')
@@ -36,6 +38,8 @@ def get_file_data(filename, outfile, header=False):
 
     # Defaults
     resdict['Threads'] = 1
+    resdict['Label'] = test_label
+    resdict['System'] = system_name
 
     # Values from file name
     resdict['File'] = os.path.abspath(filename)
