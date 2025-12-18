@@ -60,7 +60,7 @@ def get_file_data(filename, outfile, header=False):
         if re.search('LOOP+:', line):
             line = line.strip()
             tokens = line.split()
-            resdict['LOOP+ Time'] = float(tokens[6]))
+            resdict['LOOP+ Time'] = float(tokens[6])
         elif re.search('running on ', line):
             line = line.strip()
             tokens = line.split()
