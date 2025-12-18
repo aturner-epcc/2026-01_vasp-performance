@@ -15,8 +15,10 @@ def main():
     outfile = sys.argv[4]
 
     # Here we generate the list of files from a directory name
+    print(resdir)
     searchstr = resdir + "/*.OUTCAR"
     filelist = glob.glob(searchstr)
+    print(filelist)
 
     # Loop over files extracting the data as CSV
     first = True
