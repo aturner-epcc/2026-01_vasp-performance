@@ -35,8 +35,6 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
     """
     infile = open(filename, 'r')
     resdict = {}
-    loopvals = []
-    trialvals = []
 
     # Defaults
     resdict['Threads'] = 1
@@ -52,7 +50,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
             filestem = token
     tokens = filestem.split('_')
     nodestring = None
-    resdict['JobID'] = tokens[6]
+    resdict['JobID'] = tokens[6].replace('i','')
     result = subprocess.run(['sacct', '-Xn', '--format=consumedenergyraw', '-j', resdict['JobID']], stdout=subprocess.PIPE)
     energy = result.stdout.decode('UTF-8')
     resdict['Energy'] = int(energy.rstrip())
@@ -79,7 +77,8 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         elif re.search('mpi-ranks', line):
             line = line.strip()
             tokens = line.split()
-            resdict['Processes'] = int(tokens[1])
+            if tokens[1] != "****":
+               resdict['Processes'] = int(tokens[1])
         elif re.search('Each process may', line):
             line = line.strip()
             tokens = line.split()
@@ -99,6 +98,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                line = line.strip()
                tokens = line.split()
                resdict['KPAR'] = int(tokens[6].strip())  
+               resdict['Processes'] = int(tokens[4].strip()) * resdict['KPAR']
         elif re.search('NBANDS=', line):
             line = line.strip()
             tokens = line.split()
