@@ -18,7 +18,6 @@ def main():
     print(resdir)
     searchstr = resdir + "/*.OUTCAR"
     filelist = glob.glob(searchstr)
-    print(filelist)
 
     # Loop over files extracting the data as CSV
     first = True
@@ -72,12 +71,13 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         elif re.search('threads', line):
             line = line.strip()
             tokens = line.split()
-            resdict['Processes'] = int(tokens[1])
+            if "****" not in tokens[1]:
+               resdict['Processes'] = int(tokens[1])
             resdict['Threads'] = int(tokens[4])
         elif re.search('mpi-ranks', line):
             line = line.strip()
             tokens = line.split()
-            if tokens[1] != "****":
+            if "****" not in tokens[1]:
                resdict['Processes'] = int(tokens[1])
         elif re.search('Each process may', line):
             line = line.strip()
@@ -97,8 +97,10 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
             if not 'KPAR' in resdict:
                line = line.strip()
                tokens = line.split()
-               resdict['KPAR'] = int(tokens[6].strip())  
-               resdict['Processes'] = int(tokens[4].strip()) * resdict['KPAR']
+               kpar = int(tokens[6].strip())
+               procperk = int(tokens[4].strip())
+               resdict['KPAR'] = kpar
+               resdict['Processes'] = procperk * kpar
         elif re.search('NBANDS=', line):
             line = line.strip()
             tokens = line.split()
@@ -113,15 +115,53 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
     resdict['Processes'] = resdict.get('Processes', 1)
     resdict['Cores'] = resdict['Processes'] * resdict['Threads']
 
-    # Append this result to the CSV file
-
-    outstream = open(outfile, "a", newline="")
-    w = csv.DictWriter(outstream, resdict.keys())
-    if header:
-        w.writeheader()
-        w.writerow(resdict)
-    else:
-        w.writerow(resdict)
+    # Append this result to the CSV file if the run completed successfully
+    if 'Runtime' in resdict.keys():
+       outstream = open(outfile, "a", newline="")
+       if header:
+          headerline = "System,Label,File,JobID,Date,Nodes,Cores,Processes,Threads,Energy,KPAR,NCORE,NPAR,Bands,LOOP+ Time,Runtime\n"
+          outstream.write(headerline)
+          rowlist = [
+                  resdict['System'],
+                  resdict['Label'],
+                  resdict['File'],
+                  resdict['JobID'],
+                  resdict['Date'],
+                  resdict['Nodes'],
+                  resdict['Cores'],
+                  resdict['Processes'],
+                  resdict['Threads'],
+                  resdict['Energy'],
+                  resdict['KPAR'],
+                  resdict['NCORE'],
+                  resdict['NPAR'],
+                  resdict['Bands'],
+                  resdict['LOOP+ Time'],
+                  resdict['Runtime'],
+                  ]
+          rowline = ','.join(str(x) for x in rowlist)
+          outstream.write(rowline + "\n")
+       else:
+          rowlist = [
+                  resdict['System'],
+                  resdict['Label'],
+                  resdict['File'],
+                  resdict['JobID'],
+                  resdict['Date'],
+                  resdict['Nodes'],
+                  resdict['Cores'],
+                  resdict['Processes'],
+                  resdict['Threads'],
+                  resdict['Energy'],
+                  resdict['KPAR'],
+                  resdict['NCORE'],
+                  resdict['NPAR'],
+                  resdict['Bands'],
+                  resdict['LOOP+ Time'],
+                  resdict['Runtime'],
+                  ]
+          rowline = ','.join(str(x) for x in rowlist)
+          outstream.write(rowline + "\n")
 
 if __name__ == "__main__":
     main()
