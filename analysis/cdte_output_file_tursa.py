@@ -76,6 +76,10 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         else:
             if re.search('++++ Power data', line):
                 inpower = True
+            elif re.search('Offloading initialized'):
+                line = line.strip()
+                tokens = line.split()
+                resdict['GPUs'] = int(tokens[3])
             elif re.search('LOOP+:', line):
                 line = line.strip()
                 tokens = line.split()
@@ -141,7 +145,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         # Write data
         outstream = open(outfile, "a", newline="")
         if header:
-            headerline = "System,Label,File,JobID,Date,Nodes,Cores,Processes,Threads,Energy,KPAR,NCORE,NPAR,Bands,LOOP+ Time,Runtime\n"
+            headerline = "System,Label,File,JobID,Date,Nodes,Cores,Processes,Threads,GPUs,Energy,KPAR,NCORE,NPAR,Bands,LOOP+ Time,Runtime\n"
             outstream.write(headerline)
             rowlist = [
                     resdict['System'],
@@ -153,6 +157,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                     resdict['Cores'],
                     resdict['Processes'],
                     resdict['Threads'],
+                    resdict['GPUs'],
                     resdict['Energy'],
                     resdict['KPAR'],
                     resdict['NCORE'],
@@ -174,6 +179,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                     resdict['Cores'],
                     resdict['Processes'],
                     resdict['Threads'],
+                    resdict['GPUs'],
                     resdict['Energy'],
                     resdict['KPAR'],
                     resdict['NCORE'],
