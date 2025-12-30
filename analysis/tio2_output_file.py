@@ -94,10 +94,10 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                resdict['NCORE'] = int(tokens[5].strip())
                resdict['NPAR'] = int(tokens[7].strip())
         elif re.search('distrk:', line):
-            if "****" not in tokens[4]:
-                if not 'KPAR' in resdict:
-                    line = line.strip()
-                    tokens = line.split()
+            if not 'KPAR' in resdict:
+                line = line.strip()
+                tokens = line.split()
+                if "****" not in tokens[4]:
                     kpar = int(tokens[6].strip())
                     procperk = int(tokens[4].strip())
                     resdict['KPAR'] = kpar
