@@ -109,18 +109,18 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                 resdict['Date'] = f"{tokens[4].strip()} {tokens[5].strip()}"
             elif re.search('distr:', line):
                 if not 'NCORE' in resdict:
-                line = line.strip()
-                tokens = line.split()
-                resdict['NCORE'] = int(tokens[5].strip())
-                resdict['NPAR'] = int(tokens[7].strip())
+                    line = line.strip()
+                    tokens = line.split()
+                    resdict['NCORE'] = int(tokens[5].strip())
+                    resdict['NPAR'] = int(tokens[7].strip())
             elif re.search('distrk:', line):
                 if not 'KPAR' in resdict:
-                line = line.strip()
-                tokens = line.split()
-                kpar = int(tokens[6].strip())
-                procperk = int(tokens[4].strip())
-                resdict['KPAR'] = kpar
-                resdict['Processes'] = procperk * kpar
+                    line = line.strip()
+                    tokens = line.split()
+                    kpar = int(tokens[6].strip())
+                    procperk = int(tokens[4].strip())
+                    resdict['KPAR'] = kpar
+                    resdict['Processes'] = procperk * kpar
             elif re.search('NBANDS=', line):
                 line = line.strip()
                 tokens = line.split()
