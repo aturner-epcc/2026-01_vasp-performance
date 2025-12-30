@@ -138,7 +138,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         # Compute energy based on mean power draw
         meanpower = totpower / npower
         print(f'Mean power = {meanpower:.3f}')
-        resdict['Energy'] = meanpower * resdict['Runtime']
+        resdict['Energy'] = (meanpower * resdict['GPUs'] * resdict['Runtime']) + (250 * resdict['Nodes'])
         # Write data
         outstream = open(outfile, "a", newline="")
         if header:
