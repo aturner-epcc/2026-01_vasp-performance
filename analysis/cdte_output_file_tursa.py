@@ -92,13 +92,13 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                 line = line.strip()
                 tokens = line.split()
                 if "****" not in tokens[1]:
-                resdict['Processes'] = int(tokens[1])
-                resdict['Threads'] = int(tokens[4])
+                    resdict['Processes'] = int(tokens[1])
+                    resdict['Threads'] = int(tokens[4])
             elif re.search('mpi-ranks', line):
                 line = line.strip()
                 tokens = line.split()
                 if "****" not in tokens[1]:
-                resdict['Processes'] = int(tokens[1])
+                    resdict['Processes'] = int(tokens[1])
             elif re.search('Each process may', line):
                 line = line.strip()
                 tokens = line.split()
