@@ -23,6 +23,7 @@ def _():
         ARCHER2_EMB_EMISSIONS_RATE,
         CIRRUS_EMB_EMISSIONS_RATE,
         SOUTH_SCOTLAND_CI,
+        TURSA_EMB_EMISSIONS_RATE,
     )
 
 
@@ -35,23 +36,24 @@ def _(pd):
 
 @app.cell
 def _(df_cirrus):
-    df_cirrus['LOOP+ per Band'] = df_cirrus['LOOP+ Time'] / df_cirrus['Bands']
-    df_cirrus['Performance'] = 1 / df_cirrus['LOOP+ per Band']
+    df_cirrus['Bands/s'] = df_cirrus['Bands'] / df_cirrus['LOOP+ Time']
     df_cirrus['Cores per Node'] = df_cirrus['Cores'] / df_cirrus['Nodes']
     df_cirrus['kWh'] = df_cirrus['Energy'] / 3600000.0
-    df_cirrus['kWh Performance'] = df_cirrus['kWh'] / df_cirrus['LOOP+ per Band']
+    df_cirrus['Bands/kWh'] = df_cirrus['Bands'] / df_cirrus['kWh']
     df_cirrus['Coreh'] = df_cirrus['Cores'] * df_cirrus['Runtime']
     df_cirrus['Nodeh'] = df_cirrus['Nodes'] * df_cirrus['Runtime']
+    df_cirrus['Resource'] = df_cirrus['Nodes']
+    df_cirrus['GPUs'] = 0
     df_cirrus['GPUh'] = 0.0
     return
 
 
 @app.cell
-def _(CIRRUS_EMB_EMISSIONS_RATE, SOUTH_SCOTLAND_CI, df_cirrus):
+def _(CIRRUS_EMB_EMISSIONS_RATE, SOUTH_SCOTLAND_CI, df_archer2, df_cirrus):
     df_cirrus['Op Emissions'] = df_cirrus['kWh'] * SOUTH_SCOTLAND_CI
     df_cirrus['Emb Emissions'] = df_cirrus['Coreh'] * CIRRUS_EMB_EMISSIONS_RATE
     df_cirrus['Emissions'] = df_cirrus['Op Emissions'] + df_cirrus['Emb Emissions']
-    df_cirrus['Emissions Performance'] = df_cirrus['Emissions'] / df_cirrus['LOOP+ per Band']
+    df_cirrus['Bands/kgCO2e'] = df_archer2['Bands'] / df_cirrus['Emissions']
     return
 
 
@@ -64,13 +66,14 @@ def _(pd):
 
 @app.cell
 def _(df_archer2):
-    df_archer2['LOOP+ per Band'] = df_archer2['LOOP+ Time'] / df_archer2['Bands']
-    df_archer2['Performance'] = 1 / df_archer2['LOOP+ per Band']
+    df_archer2['Bands/s'] = df_archer2['Bands'] / df_archer2['LOOP+ Time']
     df_archer2['Cores per Node'] = df_archer2['Cores'] / df_archer2['Nodes']
     df_archer2['kWh'] = df_archer2['Energy'] / 3600000.0
-    df_archer2['kWh Performance'] = df_archer2['kWh'] / df_archer2['LOOP+ per Band']
+    df_archer2['Bands/kWh'] = df_archer2['Bands'] / df_archer2['kWh']
     df_archer2['Coreh'] = df_archer2['Cores'] * df_archer2['Runtime']
     df_archer2['Nodeh'] = df_archer2['Nodes'] * df_archer2['Runtime']
+    df_archer2['Resource'] = df_archer2['Nodes']
+    df_archer2['GPUs'] = 0
     df_archer2['GPUh'] = 0.0
     return
 
@@ -80,75 +83,85 @@ def _(ARCHER2_EMB_EMISSIONS_RATE, SOUTH_SCOTLAND_CI, df_archer2):
     df_archer2['Op Emissions'] = df_archer2['kWh'] * SOUTH_SCOTLAND_CI
     df_archer2['Emb Emissions'] = df_archer2['Nodeh'] * ARCHER2_EMB_EMISSIONS_RATE
     df_archer2['Emissions'] = df_archer2['Op Emissions'] + df_archer2['Emb Emissions']
-    df_archer2['Emissions Performance'] = df_archer2['Emissions'] / df_archer2['LOOP+ per Band']
+    df_archer2['Bands/kgCO2e'] = df_archer2['Bands'] / df_archer2['Emissions']
     return
 
 
 @app.cell
-def _(df_archer2, df_cirrus, pd):
-    df = pd.concat([df_cirrus, df_archer2], ignore_index=True)
-    return (df,)
+def _(pd):
+    df_tursa = pd.read_csv('csv_data/CdTe_combined_Tursa.csv')
+    df_tursa.head()
+    return (df_tursa,)
 
 
 @app.cell
-def _(df):
-    df_mpi = df.loc[df['Threads'] == 1]
-    df_full = df_mpi.loc[(df_mpi['Cores per Node'] == 288) | (df_mpi['Cores per Node'] == 128) ]
-    df_single = df_mpi.loc[df_mpi['Nodes'] == 1]
-    return df_full, df_single
-
-
-@app.cell
-def _(df_full, sns):
-    sns.lineplot(data=df_full, x='Cores', y='Performance', hue='System', markers=True)
+def _(df_tursa):
+    df_tursa['Bands/s'] = df_tursa['Bands'] / df_tursa['LOOP+ Time']
+    df_tursa['Cores per Node'] = df_tursa['Cores'] / df_tursa['Nodes']
+    df_tursa['kWh'] = df_tursa['Energy'] / 3600000.0
+    df_tursa['Bands/kWh'] = df_tursa['Bands'] / df_tursa['kWh']
+    df_tursa['Coreh'] = df_tursa['Cores'] * df_tursa['Runtime']
+    df_tursa['Nodeh'] = df_tursa['Nodes'] * df_tursa['Runtime']
+    df_tursa['GPUh'] = df_tursa['GPUs'] * df_tursa['Runtime']
+    df_tursa['Resource'] = df_tursa['GPUs']
     return
 
 
 @app.cell
-def _(df_full, sns):
-    sns.lineplot(data=df_full, x='Nodes', y='Performance', hue='System', markers=True)
+def _(SOUTH_SCOTLAND_CI, TURSA_EMB_EMISSIONS_RATE, df_tursa):
+    df_tursa['Op Emissions'] = df_tursa['kWh'] * SOUTH_SCOTLAND_CI
+    df_tursa['Emb Emissions'] = df_tursa['GPUh'] * TURSA_EMB_EMISSIONS_RATE
+    df_tursa['Emissions'] = df_tursa['Op Emissions'] + df_tursa['Emb Emissions']
+    df_tursa['Bands/kgCO2e'] = df_tursa['Bands'] / df_tursa['Emissions']
     return
 
 
 @app.cell
-def _(df_full, sns):
-    sns.barplot(data=df_full, x='Cores', y='Performance', hue='System')
-    return
+def _(df_archer2, df_cirrus, df_tursa, pd):
+    df = pd.concat([df_cirrus, df_archer2, df_tursa], ignore_index=True)
+    df_single = df.loc[df['Nodes'] == 1]
+    return df, df_single
 
 
 @app.cell
-def _(df_full, sns):
-    sns.lineplot(data=df_full, x='Nodes', y='kWh Performance', hue='System', markers=True)
-    return
-
-
-@app.cell
-def _(df_full, sns):
-    sns.lineplot(data=df_full, x='Nodes', y='Emissions Performance', hue='System')
-    return
-
-
-@app.cell
-def _(df_full, sns):
-    sns.lineplot(data=df_full, x='Nodes', y='Emb Emissions', hue='System')
+def _(df_single, sns):
+    sns.barplot(data=df_single, y='Label', x='Bands/s', hue='System')
     return
 
 
 @app.cell
 def _(df_single, sns):
-    sns.barplot(data=df_single, x='Cores per Node', y='Performance', hue='System')
+    sns.barplot(data=df_single, y='Label', x='LOOP+ Time', hue='System')
     return
 
 
 @app.cell
 def _(df_single, sns):
-    sns.lineplot(data=df_single, x='Cores', y='Emb Emissions', hue='System')
+    sns.barplot(data=df_single, y='Label', x='Bands/kWh', hue='System')
     return
 
 
 @app.cell
 def _(df_single, sns):
-    sns.lineplot(data=df_single, x='Cores', y='Performance', hue='System')
+    sns.barplot(data=df_single, y='Label', x='Bands/kgCO2e', hue='System')
+    return
+
+
+@app.cell
+def _(df, sns):
+    sns.lineplot(data=df, x='Resource', y='Bands/s', hue='System', markers=True)
+    return
+
+
+@app.cell
+def _(df, sns):
+    sns.lineplot(data=df, x='Resource', y='Bands/kWh', hue='System', markers=True)
+    return
+
+
+@app.cell
+def _(df, sns):
+    sns.lineplot(data=df, x='Resource', y='Bands/kgCO2e', hue='System', markers=True)
     return
 
 
