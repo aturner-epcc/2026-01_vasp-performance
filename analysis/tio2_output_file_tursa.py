@@ -66,7 +66,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                 line = line.strip()
                 tokens = line.split()
                 power = float(tokens[3])
-                if power > 120.0:
+                if power > 90.0:
                     totpower += power
                     npower += 1
         else:
