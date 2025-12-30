@@ -50,9 +50,6 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
     tokens = filestem.split('_')
     nodestring = None
     resdict['JobID'] = tokens[6].replace('i','')
-    result = subprocess.run(['sacct', '-Xn', '--format=consumedenergyraw', '-j', resdict['JobID']], stdout=subprocess.PIPE)
-    energy = result.stdout.decode('UTF-8')
-    resdict['Energy'] = int(energy.rstrip())
     for token in tokens:
         if 'nodes' in token:
             nodestring = token
