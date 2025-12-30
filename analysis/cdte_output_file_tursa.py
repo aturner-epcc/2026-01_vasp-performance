@@ -71,7 +71,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                     totpower += power
                     npower += 1
         else:
-            if re.search('++++ Power data', line):
+            if re.search('\+\+\+\+ Power data', line):
                 inpower = True
             elif re.search('Offloading initialized'):
                 line = line.strip()
