@@ -73,7 +73,7 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         else:
             if re.search('\+\+\+\+ Power data', line):
                 inpower = True
-            elif re.search('Offloading initialized'):
+            elif re.search('Offloading initialized', line):
                 line = line.strip()
                 tokens = line.split()
                 resdict['GPUs'] = int(tokens[3])
