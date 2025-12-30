@@ -49,7 +49,6 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
             filestem = token
     tokens = filestem.split('_')
     nodestring = None
-    resdict['JobID'] = tokens[6].replace('i','')
     for token in tokens:
         if 'nodes' in token:
             nodestring = token
@@ -73,6 +72,10 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
         else:
             if re.search('\+\+\+\+ Power data', line):
                 inpower = True
+            elif re.search('\+\+\+\+ Slurm JobID', line):
+                line = line.strip()
+                tokens = line.split()
+                resdict['JobID'] = tokens[4]
             elif re.search('Offloading initialized', line):
                 line = line.strip()
                 tokens = line.split()
