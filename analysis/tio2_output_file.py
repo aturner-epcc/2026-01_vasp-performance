@@ -102,6 +102,9 @@ def get_file_data(filename, test_label, system_name, outfile, header=False):
                     procperk = int(tokens[4].strip())
                     resdict['KPAR'] = kpar
                     resdict['Processes'] = procperk * kpar
+                else:
+                    kpar = int(tokens[6].strip())
+                    resdict['KPAR'] = kpar
         elif re.search('NBANDS=', line):
             line = line.strip()
             tokens = line.split()
