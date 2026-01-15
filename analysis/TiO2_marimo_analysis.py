@@ -62,7 +62,7 @@ def _(sns):
 
 @app.cell
 def _(pd):
-    df_cirrus = pd.read_csv('csv_data/CdTe_combined_Cirrus.csv')
+    df_cirrus = pd.read_csv('csv_data/TiO2_combined_Cirrus.csv')
     df_cirrus
     return (df_cirrus,)
 
@@ -114,15 +114,27 @@ def _(
 
 @app.cell
 def _(df_cirrus):
+    df_cirrus
+    return
+
+
+@app.cell
+def _(df_cirrus):
     df_cirrus_single = df_cirrus.loc[df_cirrus['Nodes'] == 1]
     return (df_cirrus_single,)
 
 
 @app.cell
 def _(pd):
-    df_archer2 = pd.read_csv('csv_data/CdTe_combined_ARCHER2.csv')
+    df_archer2 = pd.read_csv('csv_data/TiO2_combined_ARCHER2.csv')
     df_archer2.head()
     return (df_archer2,)
+
+
+@app.cell
+def _(df_archer2):
+    df_archer2
+    return
 
 
 @app.cell
@@ -174,7 +186,7 @@ def _(df_archer2):
 
 @app.cell
 def _(pd):
-    df_tursa = pd.read_csv('csv_data/CdTe_combined_Tursa.csv')
+    df_tursa = pd.read_csv('csv_data/TiO2_combined_Tursa.csv')
     df_tursa.head()
     return (df_tursa,)
 
@@ -231,7 +243,7 @@ def _(df_archer2, df_cirrus, df_tursa, pd):
     df_cpu = pd.concat([df_cirrus, df_archer2], ignore_index=True)
     df_cpu_mpi = df_cpu.loc[df_cpu['Threads'] == 1]
     df_single = df.loc[df['Nodes'] == 1]
-    return df, df_cpu, df_single
+    return df, df_cpu, df_cpu_mpi, df_single
 
 
 @app.cell
@@ -247,8 +259,20 @@ def _(df_cirrus_single):
 
 
 @app.cell
+def _(df_cirrus_single):
+    df_cirrus_single.loc[df_cirrus_single['Bands/s'].idxmax()]
+    return
+
+
+@app.cell
 def _(df_archer2_single):
     df_archer2_single.sort_values('Bands/s', ascending=False)
+    return
+
+
+@app.cell
+def _(df_archer2_single):
+    df_archer2_single.loc[df_archer2_single['Bands/s'].idxmax()]
     return
 
 
@@ -259,8 +283,8 @@ def _(df_tursa_single):
 
 
 @app.cell
-def _(df_single, sns):
-    sns.barplot(data=df_single, y='Label', x='Bands/s', hue='System')
+def _(df_tursa_single):
+    df_tursa_single.loc[df_tursa_single['Bands/s'].idxmax()]
     return
 
 
@@ -279,7 +303,7 @@ def _(df_single, sns):
 @app.cell
 def _(df, pyplot, sns):
     ax1 = sns.lineplot(data=df, x='Peak FP64 Flops', y='Bands/s', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bands_scaling.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bands_scaling.png', dpi=300, bbox_inches='tight')
     ax1
     return
 
@@ -287,7 +311,7 @@ def _(df, pyplot, sns):
 @app.cell
 def _(df, pyplot, sns):
     ax2 = sns.lineplot(data=df, x='Peak FP64 Flops', y='Bands/kWh', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bandkwh_scaling.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bandkwh_scaling.png', dpi=300, bbox_inches='tight')
     ax2
     return
 
@@ -295,7 +319,7 @@ def _(df, pyplot, sns):
 @app.cell
 def _(df, pyplot, sns):
     ax3 = sns.lineplot(data=df, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bandkgco2e_scaling.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bandkgco2e_scaling.png', dpi=300, bbox_inches='tight')
     ax3
     return
 
@@ -303,8 +327,7 @@ def _(df, pyplot, sns):
 @app.cell
 def _(df_cpu, pyplot, sns):
     ax4 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/s', hue='Label', style='System', markers=True, estimator=max, errorbar=None)
-    ax4.set(xlim=(0, 600))
-    pyplot.savefig('cdte_bands_linalg.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bands_linalg.png', dpi=300, bbox_inches='tight')
     ax4
     return
 
@@ -312,9 +335,8 @@ def _(df_cpu, pyplot, sns):
 @app.cell
 def _(df_cpu, pyplot, sns):
     ax5 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kWh', hue='Label', style='System', markers=True, estimator=max, errorbar=None)
-    ax5.set(xlim=(0, 600))
     sns.despine()
-    pyplot.savefig('cdte_bandkwh_linalg.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bandkwh_linalg.png', dpi=300, bbox_inches='tight')
     ax5
     return
 
@@ -322,56 +344,61 @@ def _(df_cpu, pyplot, sns):
 @app.cell
 def _(df_cpu, pyplot, sns):
     ax6 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='Label', style='System', markers=True, estimator=max, errorbar=None)
-    ax6.set(xlim=(0, 600))
-    pyplot.savefig('cdte_bandkgco2e_linalg.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bandkgco2e_linalg.png', dpi=300, bbox_inches='tight')
     ax6
     return
 
 
 @app.cell
 def _(df_cpu, pyplot, sns):
-    ax7 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/s', hue='NCORE', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bands_ncore.png', dpi=300, bbox_inches='tight')
+    ax7 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/s', hue='Threads', style='System', markers=True, estimator=max, errorbar=None)
+    ax7.set(xlim=(0, 600))
+    pyplot.savefig('tio2_bands_threads.png', dpi=300, bbox_inches='tight')
     ax7
     return
 
 
 @app.cell
 def _(df_cpu, pyplot, sns):
-    ax8 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kWh', hue='NCORE', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bandkwh_ncore.png', dpi=300, bbox_inches='tight')
+    ax8 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='Threads', style='System', markers=True, estimator=max, errorbar=None)
+    ax8.set(xlim=(0, 600))
+    pyplot.savefig('tio2_bandkgco2e_threads.png', dpi=300, bbox_inches='tight')
     ax8
     return
 
 
 @app.cell
 def _(df_cpu, pyplot, sns):
-    ax9 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='NCORE', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bandkgco2e_ncore.png', dpi=300, bbox_inches='tight')
+    ax9 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kWh', hue='Threads', style='System', markers=True, estimator=max, errorbar=None)
+    ax9.set(xlim=(0, 600))
+    pyplot.savefig('tio2_bandkwh_threads.png', dpi=300, bbox_inches='tight')
     ax9
     return
 
 
 @app.cell
-def _(df_cpu, pyplot, sns):
-    ax10 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/s', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bands_kpar.png', dpi=300, bbox_inches='tight')
+def _(df_cpu_mpi, pyplot, sns):
+    ax10 = sns.lineplot(data=df_cpu_mpi, x='Peak FP64 Flops', y='Bands/s', hue='NCORE', style='System', markers=True, estimator=max, errorbar=None)
+    ax10.set(xlim=(0, 600))
+    pyplot.savefig('tio2_bands_ncore.png', dpi=300, bbox_inches='tight')
     ax10
     return
 
 
 @app.cell
-def _(df_cpu, pyplot, sns):
-    ax11 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kWh', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bandkwh_kpar.png', dpi=300, bbox_inches='tight')
+def _(df_cpu_mpi, pyplot, sns):
+    ax11 = sns.lineplot(data=df_cpu_mpi, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='NCORE', style='System', markers=True, estimator=max, errorbar=None)
+    ax11.set(xlim=(0, 600))
+    pyplot.savefig('tio2_bandkgco2e_ncore.png', dpi=300, bbox_inches='tight')
     ax11
     return
 
 
 @app.cell
-def _(df_cpu, pyplot, sns):
-    ax12 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
-    pyplot.savefig('cdte_bandkgco2e_kpar.png', dpi=300, bbox_inches='tight')
+def _(df_cpu_mpi, pyplot, sns):
+    ax12 = sns.lineplot(data=df_cpu_mpi, x='Peak FP64 Flops', y='Bands/kWh', hue='NCORE', style='System', markers=True, estimator=max, errorbar=None)
+    ax12.set(xlim=(0, 600))
+    pyplot.savefig('tio2_bandkwh_ncore.png', dpi=300, bbox_inches='tight')
     ax12
     return
 
@@ -397,7 +424,7 @@ def _(df_melt_emissions, pyplot, sns):
     g.set_titles(col_template="{col_name}")
     g.set(xlim=(-10, 600))
     g.add_legend()
-    pyplot.savefig('cdte_bandkgco2e_location.png', dpi=300, bbox_inches='tight')
+    pyplot.savefig('tio2_bandkgco2e_location.png', dpi=300, bbox_inches='tight')
     g
     return
 
