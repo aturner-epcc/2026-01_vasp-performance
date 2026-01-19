@@ -1,0 +1,100 @@
+# Default precompiler options
+CPP_OPTIONS= -DHOST=\"HPECrayEX_GCC_MKL\" \
+             -DMPI -DMPI_BLOCK=32000 -Duse_collective \
+             -DscaLAPACK \
+             -DCACHE_SIZE=2000 \
+             -Davoidalloc \
+             -DMPI_INPLACE \
+             -Dvasp6 \
+             -Duse_bse_te \
+             -Dtbdyn \
+             -Dfock_dblbuf \
+             -D_OPENMP
+
+CPP         = gcc -E -C -w $*$(FUFFIX) >$*$(SUFFIX) $(CPP_OPTIONS)
+
+FC          = ftn -fopenmp
+FCL         = ftn -fopenmp
+
+FREE        = -ffree-form -ffree-line-length-none
+
+FFLAGS      = -w -ffpe-summary=none
+
+OFLAG       = -O2
+OFLAG_IN    = $(OFLAG)
+DEBUG       = -O0
+
+# For what used to be vasp.5.lib
+CPP_LIB     = $(CPP)
+FC_LIB      = $(FC)
+CC_LIB      = cc
+CFLAGS_LIB  = -O
+FFLAGS_LIB  = -O1
+FREE_LIB    = $(FREE)
+
+OBJECTS_LIB = linpack_double.o
+
+# For the parser library
+CXX_PARS    = CC
+LLIBS       = -lstdc++
+
+##
+## Customize as of this point! Of course you may change the preceding
+## part of this file as well if you like, but it should rarely be
+## necessary ...
+##
+
+# For gcc-10 and higher (comment out for older versions)
+FFLAGS     += -fallow-argument-mismatch
+
+# Intel MKL for FFTW, BLAS, LAPACK, and scaLAPACK
+MKLROOT   ?= /opt/intel/oneapi/mkl/2025.0
+LLIBS_MKL  = -L$(MKLROOT)/lib/intel64 -Wl,--no-as-needed -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64 -lgomp -lpthread -lm -ldl
+INCS       = -I$(MKLROOT)/include/fftw
+
+# Use a separate scaLAPACK installation (optional but recommended in combination with OpenMPI)
+# Comment out the two lines below if you want to use scaLAPACK from MKL instead
+# SCALAPACK_ROOT ?= /path/to/your/scalapack/installation
+# LLIBS_MKL  = -L$(SCALAPACK_ROOT)/lib -lscalapack -L$(MKLROOT)/lib/intel64 -Wl,--no-as-needed -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
+
+LLIBS      += $(LLIBS_MKL)
+
+
+# HDF5-support (optional but strongly recommended)
+CPP_OPTIONS+= -DVASP_HDF5
+# HDF5_ROOT  ?= /path/to/your/hdf5/installation
+LLIBS      += -L$(HDF5_ROOT)/lib -lhdf5_fortran
+INCS       += -I$(HDF5_ROOT)/include
+
+# Add BEEF functional support
+CPP_OPTIONS  += -Dlibbeef
+LIBBEEF_ROOT ?= /work/y07/shared/cirrus-ex/cirrus-ex-software/libs/compiler/gnu/12.2/libbeef/0.1.3
+LLIBS        += -L$(LIBBEEF_ROOT)/lib -lbeef
+
+# For the VASP-2-Wannier90 interface (optional)
+CPP_OPTIONS    += -DVASP2WANNIER90
+WANNIER90_ROOT ?= /mnt/lustre/e1000/home/y07/shared/cirrus-ex/cirrus-ex-software/spack-cirrus-ex/1.0.2/cirrus-ex-cse/opt/linux-rhel9-zen5/gcc-14.2/wannier90-3.1.0-mspn5w66ri3mbnfi5b2usenbq4mjm5dm
+LLIBS          += -L$(WANNIER90_ROOT)/lib -lwannier
+
+# LibXC
+CPP_OPTIONS += -DUSELIBXC
+LIBXC_ROOT  ?= /mnt/lustre/e1000/home/y07/shared/cirrus-ex/cirrus-ex-software/spack-cirrus-ex/1.0.2/cirrus-ex-cse/opt/linux-rhel9-zen5/gcc-14.2/libxc-7.0.0-vv5lyr4s6z42bdjzkvspxh7lokz3ovi6
+LLIBS       += -L$(LIBXC_ROOT)/lib64 -lxcf03 -lxc
+INCS        += -I$(LIBXC_ROOT)/include
+
+# For the fftlib library (hardly any benefit in combination with MKL's FFTs)
+#CPP_OPTIONS+= -Dsysv
+#FCL        += fftlib.o
+#CXX_FFTLIB  = g++ -fopenmp -std=c++11 -DFFTLIB_USE_MKL -DFFTLIB_THREADSAFE
+#INCS_FFTLIB = -I./include -I$(MKLROOT)/include/fftw
+#LIBS       += fftlib
+#LLIBS      += -ldl
+
+# For machine learning library vaspml (experimental)
+CPP_OPTIONS += -Dlibvaspml
+CPP_OPTIONS += -DVASPML_USE_CBLAS
+CPP_OPTIONS += -DVASPML_USE_MKL
+CPP_OPTIONS += -DVASPML_DEBUG_LEVEL=3
+CXX_ML      = CC
+CXXFLAGS_ML = -O3 -std=c++17 -pedantic-errors -Wall -Wextra
+INCLUDE_ML  =
