@@ -7,7 +7,12 @@ Results for two benchmarks on three difference EPCC systems.
 Subdirectories:
 
 - [analysis](./analysis/) - Scripts for extracting data from output files, Marimo notebooks for analysis and plotting
+- [build](./build/) - Build scripts and makefile.include for different builds of VASP 6.5.1 used
 - [csv_data](./csv_data/) - Job data extracted from output files, used for input to Marimo notebooks
+- [input](./inputs/) - Inputs for the benchmark calculations
+   + The POTCAR file needs to be constructed from your own VASP installation of the basis set files
+   + For TiO2, you will need the Ti and O PAW PBE basis set files concatenated together.
+   + For CdTe, you will need the Cd and Te PAW PBE basis set files concatenated together.
 - [output_data](./output_data/) - aw output data from VASP calculations
 - [plots](./plots/) - Performance plots produced by Marimo notebooks
 
