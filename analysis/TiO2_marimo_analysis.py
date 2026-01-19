@@ -327,6 +327,7 @@ def _(df, pyplot, sns):
 @app.cell
 def _(df_cpu, pyplot, sns):
     ax4 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/s', hue='Label', style='System', markers=True, estimator=max, errorbar=None)
+    ax4.set(xlim=(0,600))
     pyplot.savefig('tio2_bands_linalg.png', dpi=300, bbox_inches='tight')
     ax4
     return
@@ -335,6 +336,7 @@ def _(df_cpu, pyplot, sns):
 @app.cell
 def _(df_cpu, pyplot, sns):
     ax5 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kWh', hue='Label', style='System', markers=True, estimator=max, errorbar=None)
+    ax5.set(xlim=(0,600))
     sns.despine()
     pyplot.savefig('tio2_bandkwh_linalg.png', dpi=300, bbox_inches='tight')
     ax5
@@ -344,6 +346,7 @@ def _(df_cpu, pyplot, sns):
 @app.cell
 def _(df_cpu, pyplot, sns):
     ax6 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='Label', style='System', markers=True, estimator=max, errorbar=None)
+    ax6.set(xlim=(0,600))
     pyplot.savefig('tio2_bandkgco2e_linalg.png', dpi=300, bbox_inches='tight')
     ax6
     return

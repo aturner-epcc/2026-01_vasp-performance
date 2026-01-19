@@ -353,24 +353,27 @@ def _(df_cpu, pyplot, sns):
 
 
 @app.cell
-def _(df_cpu, pyplot, sns):
-    ax10 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/s', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
+def _(df, pyplot, sns):
+    ax10 = sns.lineplot(data=df, x='Peak FP64 Flops', y='Bands/s', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
+    ax10.set(xlim=(0, 600))
     pyplot.savefig('cdte_bands_kpar.png', dpi=300, bbox_inches='tight')
     ax10
     return
 
 
 @app.cell
-def _(df_cpu, pyplot, sns):
-    ax11 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kWh', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
+def _(df, pyplot, sns):
+    ax11 = sns.lineplot(data=df, x='Peak FP64 Flops', y='Bands/kWh', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
+    ax11.set(xlim=(0, 600))
     pyplot.savefig('cdte_bandkwh_kpar.png', dpi=300, bbox_inches='tight')
     ax11
     return
 
 
 @app.cell
-def _(df_cpu, pyplot, sns):
-    ax12 = sns.lineplot(data=df_cpu, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
+def _(df, pyplot, sns):
+    ax12 = sns.lineplot(data=df, x='Peak FP64 Flops', y='Bands/kgCO2e (S Scotland)', hue='KPAR', style='System', markers=True, estimator=max, errorbar=None)
+    ax12.set(xlim=(0, 600))
     pyplot.savefig('cdte_bandkgco2e_kpar.png', dpi=300, bbox_inches='tight')
     ax12
     return
@@ -399,6 +402,11 @@ def _(df_melt_emissions, pyplot, sns):
     g.add_legend()
     pyplot.savefig('cdte_bandkgco2e_location.png', dpi=300, bbox_inches='tight')
     g
+    return
+
+
+@app.cell
+def _():
     return
 
 
