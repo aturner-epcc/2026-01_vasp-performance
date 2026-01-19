@@ -1,0 +1,1915 @@
+ vasp.6.5.1 10Mar25 (build Dec 23 2025 12:45:43) complex                         
+ executed on              LinuxNV date 2025.12.24  15:17:25
+ running   16 mpi-ranks, with    8 threads/rank, on    4 nodes
+ distrk:  each k-point on    1 cores,   16 groups
+ distr:  one band on NCORE=   1 cores,    1 groups
+ Offloading initialized ...   16 GPUs detected
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ INCAR:
+   AEXX = 0.25
+   ENCUT = 450
+   ICORELEVEL = 0
+   NSW = 0
+   LSORBIT = True
+   EDIFF = 1e-06
+   EDIFFG = -0.01
+   ALGO = All
+   ADDGRID = True
+   HFSCREEN = 0.2
+   IBRION = -1
+   ICHARG = 1
+   ISIF = 2
+   ISYM = 0
+   ISMEAR = 0
+   LASPH = True
+   LHFCALC = True
+   LORBIT = 11
+   LREAL = False
+   LVHAR = True
+   LWAVE = True
+   NEDOS = 2000
+   NELM = 6
+   PREC = Accurate
+   PRECFOCK = Fast
+   SIGMA = 0.05
+   NELECT = 588
+   NCORE = 1
+   KPAR = 16
+
+ POTCAR:    PAW_PBE Cd 06Sep2000                  
+ POTCAR:    PAW_PBE Te 08Apr2002                  
+ -----------------------------------------------------------------------------
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|     You requested a magnetic or noncollinear calculation, but did not       |
+|     specify the initial magnetic moment with the MAGMOM tag. Note that      |
+|     a default of 1 will be used for all atoms. This ferromagnetic setup     |
+|     may break the symmetry of the crystal, in particular it may rule        |
+|     out finding an antiferromagnetic solution. Thence, we recommend         |
+|     setting the initial magnetic moment manually or verifying carefully     |
+|     that this magnetic setup is desired.                                    |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ POTCAR:    PAW_PBE Cd 06Sep2000                  
+   VRHFIN =Cd : s2 d10                                                                              
+   LEXCH  = PE                                                                                      
+   EATOM  =  1293.1815 eV,   95.0462 Ry                                                             
+                                                                                                    
+   TITEL  = PAW_PBE Cd 06Sep2000                                                                    
+   LULTRA =        F    use ultrasoft PP ?                                                          
+   IUNSCR =        1    unscreen: 0-lin 1-nonlin 2-no                                               
+   RPACOR =    2.000    partial core radius                                                         
+   POMASS =  112.411; ZVAL   =   12.000    mass and valenz                                          
+   RCORE  =    2.300    outmost cutoff radius                                                       
+   RWIGS  =    2.980; RWIGS  =    1.577    wigner-seitz radius (au A)                               
+   ENMAX  =  274.336; ENMIN  =  205.752 eV                                                          
+   RCLOC  =    2.054    cutoff for local pot                                                        
+   LCOR   =        T    correct aug charges                                                         
+   LPAW   =        T    paw PP                                                                      
+   EAUG   =  456.106                                                                                
+   DEXC   =    0.000                                                                                
+   RMAX   =    2.358    core radius for proj-oper                                                   
+   RAUG   =    1.300    factor for augmentation sphere                                              
+   RDEP   =    2.450    radius for radial grids                                                     
+   RDEPT  =    1.955    core radius for aug-charge                                                  
+                                                                                                    
+   Atomic configuration                                                                             
+   12 entries                                                                                       
+     n  l   j            E        occ.                                                              
+     1  0  0.50    -26519.7817   2.0000                                                             
+     2  0  0.50     -3936.9612   2.0000                                                             
+     2  1  1.50     -3532.2230   6.0000                                                             
+     3  0  0.50      -733.7908   2.0000                                                             
+     3  1  1.50      -601.0792   6.0000                                                             
+     3  2  2.50      -393.5307  10.0000                                                             
+     4  0  0.50      -105.8977   2.0000                                                             
+     4  1  1.50       -66.9488   6.0000                                                             
+     4  2  2.50       -11.7331  10.0000                                                             
+     5  0  0.50        -5.6592   2.0000                                                             
+     5  1  0.50        -1.3606   0.0000                                                             
+     4  3  2.50        -1.3606   0.0000                                                             
+   Description                                                                                      
+     l       E           TYP  RCUT    TYP  RCUT                                                     
+     2    -11.7331479     23  2.300                                                                 
+     2    -13.0937305     23  2.300                                                                 
+     0     -5.6591502     23  2.300                                                                 
+     0     -1.5561433     23  2.300                                                                 
+     1     -2.7211652     23  2.300                                                                 
+     1      8.3548275     23  2.300                                                                 
+  local pseudopotential read in
+  partial core-charges read in
+  partial kinetic energy density read in
+  atomic valenz-charges read in
+  non local Contribution for L=            2  read in
+    real space projection operators read in
+  non local Contribution for L=            2  read in
+    real space projection operators read in
+  non local Contribution for L=            0  read in
+    real space projection operators read in
+  non local Contribution for L=            0  read in
+    real space projection operators read in
+  non local Contribution for L=            1  read in
+    real space projection operators read in
+  non local Contribution for L=            1  read in
+    real space projection operators read in
+    PAW grid and wavefunctions read in
+ 
+   number of l-projection  operators is LMAX  =            6
+   number of lm-projection operators is LMMAX =           18
+ 
+ POTCAR:    PAW_PBE Te 08Apr2002                  
+   VRHFIN =Te: s2p4                                                                                 
+   LEXCH  = PE                                                                                      
+   EATOM  =   223.2721 eV,   16.4100 Ry                                                             
+                                                                                                    
+   TITEL  = PAW_PBE Te 08Apr2002                                                                    
+   LULTRA =        F    use ultrasoft PP ?                                                          
+   IUNSCR =        1    unscreen: 0-lin 1-nonlin 2-no                                               
+   RPACOR =    2.200    partial core radius                                                         
+   POMASS =  127.600; ZVAL   =    6.000    mass and valenz                                          
+   RCORE  =    2.300    outmost cutoff radius                                                       
+   RWIGS  =    2.900; RWIGS  =    1.535    wigner-seitz radius (au A)                               
+   ENMAX  =  174.982; ENMIN  =  131.236 eV                                                          
+   ICORE  =        3    local potential                                                             
+   LCOR   =        T    correct aug charges                                                         
+   LPAW   =        T    paw PP                                                                      
+   EAUG   =  368.792                                                                                
+   DEXC   =    0.000                                                                                
+   RMAX   =    2.345    core radius for proj-oper                                                   
+   RAUG   =    1.300    factor for augmentation sphere                                              
+   RDEP   =    2.397    radius for radial grids                                                     
+   RDEPT  =    2.174    core radius for aug-charge                                                  
+                                                                                                    
+   Atomic configuration                                                                             
+   13 entries                                                                                       
+     n  l   j            E        occ.                                                              
+     1  0  0.50    -31621.2075   2.0000                                                             
+     2  0  0.50     -4848.7941   2.0000                                                             
+     2  1  1.50     -4352.1960   6.0000                                                             
+     3  0  0.50      -964.9612   2.0000                                                             
+     3  1  1.50      -803.6179   6.0000                                                             
+     3  2  2.50      -559.8710  10.0000                                                             
+     4  0  0.50      -164.3522   2.0000                                                             
+     4  1  1.50      -114.3756   6.0000                                                             
+     4  2  2.50       -41.6483  10.0000                                                             
+     5  0  0.50       -15.1072   2.0000                                                             
+     5  1  0.50        -5.9526   4.0000                                                             
+     5  2  1.50        -5.4423   0.0000                                                             
+     4  3  2.50        -5.4423   0.0000                                                             
+   Description                                                                                      
+     l       E           TYP  RCUT    TYP  RCUT                                                     
+     0    -15.1072389     23  2.300                                                                 
+     0    -16.4678215     23  2.300                                                                 
+     1     -5.9526306     23  2.300                                                                 
+     1     -2.4873968     23  2.300                                                                 
+     2     -5.4423304     23  2.300                                                                 
+     3     -1.3605826     23  2.300                                                                 
+  local pseudopotential read in
+  partial core-charges read in
+  partial kinetic energy density read in
+  atomic valenz-charges read in
+  non local Contribution for L=            0  read in
+    real space projection operators read in
+  non local Contribution for L=            0  read in
+    real space projection operators read in
+  non local Contribution for L=            1  read in
+    real space projection operators read in
+  non local Contribution for L=            1  read in
+    real space projection operators read in
+  non local Contribution for L=            2  read in
+    real space projection operators read in
+    PAW grid and wavefunctions read in
+ 
+   number of l-projection  operators is LMAX  =            5
+   number of lm-projection operators is LMMAX =           13
+ 
+ -----------------------------------------------------------------------------
+|                                                                             |
+|               ----> ADVICE to this user running VASP <----                  |
+|                                                                             |
+|     You have a (more or less) 'large supercell' and for larger cells it     |
+|     might be more efficient to use real-space projection operators.         |
+|     Therefore, try LREAL= Auto in the INCAR file.                           |
+|     Mind: For very accurate calculation, you might also keep the            |
+|     reciprocal projection scheme (i.e. LREAL=.FALSE.).                      |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+  PAW_PBE Cd 06Sep2000                  :
+ energy of atom  1       EATOM=-1293.1815
+ kinetic energy error for atom=    0.0084 (will be added to EATOM!!)
+  PAW_PBE Te 08Apr2002                  :
+ energy of atom  2       EATOM= -223.2721
+ kinetic energy error for atom=    0.0008 (will be added to EATOM!!)
+ 
+ 
+ POSCAR: Cd33 Te32
+  positions in direct lattice
+  No initial velocities read in
+
+
+ exchange-correlation table for PE
+   RHO(1)=    0.500       N(1)  =     2000
+   RHO(2)=  100.500       N(2)  =     4000
+ 
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ ion  position               nearest neighbor table
+   1  0.004  0.996  0.004-  44 2.79  35 2.93  54 2.93  65 2.93  33 2.94
+   2  0.001  0.999  0.497-  55 2.82  34 2.82  64 2.82  45 2.84
+   3  0.001  0.503  0.001-  63 2.82  56 2.82  37 2.82  42 2.84
+   4  1.000  0.501  0.499-  57 2.82  62 2.82  36 2.82  43 2.84
+   5  0.497  0.999  0.001-  39 2.82  50 2.82  61 2.82  48 2.84
+   6  0.499  0.000  0.499-  38 2.82  51 2.82  60 2.82  49 2.84
+   7  0.499  0.501  1.000-  59 2.82  41 2.82  52 2.82  46 2.84
+   8  0.501  0.499  0.501-  47 2.82  40 2.83  53 2.83  58 2.83
+   9  0.001  0.251  0.253-  54 2.82  34 2.82  62 2.82  42 2.84
+  10  0.004  0.254  0.746-  43 2.79  35 2.93  55 2.93  63 2.93  33 2.94
+  11  1.000  0.749  0.251-  56 2.82  64 2.82  36 2.82  44 2.84
+  12  0.001  0.747  0.749-  65 2.82  57 2.82  37 2.82  45 2.84
+  13  0.499  0.250  0.251-  38 2.82  50 2.82  58 2.82  46 2.84
+  14  0.497  0.251  0.749-  39 2.82  51 2.82  59 2.82  47 2.84
+  15  0.501  0.751  0.249-  48 2.82  40 2.83  52 2.83  60 2.83
+  16  0.499  0.749  0.750-  61 2.82  41 2.82  53 2.82  49 2.84
+  17  0.251  0.000  0.251-  34 2.82  50 2.82  60 2.82  44 2.84
+  18  0.253  0.999  0.749-  35 2.82  51 2.82  61 2.82  45 2.84
+  19  0.249  0.499  0.249-  42 2.82  36 2.83  52 2.83  58 2.83
+  20  0.251  0.501  0.750-  59 2.82  37 2.82  53 2.82  43 2.84
+  21  0.749  0.999  0.253-  54 2.82  38 2.82  64 2.82  48 2.84
+  22  0.746  0.996  0.746-  49 2.79  39 2.93  55 2.93  65 2.93  33 2.94
+  23  0.750  0.501  0.251-  56 2.82  62 2.82  40 2.82  46 2.84
+  24  0.749  0.503  0.749-  63 2.82  57 2.82  41 2.82  47 2.84
+  25  0.253  0.251  0.001-  35 2.82  50 2.82  59 2.82  42 2.84
+  26  0.251  0.250  0.499-  34 2.82  51 2.82  58 2.82  43 2.84
+  27  0.251  0.749  1.000-  61 2.82  37 2.82  52 2.82  44 2.84
+  28  0.249  0.751  0.501-  45 2.82  36 2.83  53 2.83  60 2.83
+  29  0.746  0.254  0.004-  46 2.79  39 2.93  54 2.93  63 2.93  33 2.94
+  30  0.749  0.251  0.497-  55 2.82  38 2.82  62 2.82  47 2.84
+  31  0.749  0.747  0.001-  65 2.82  56 2.82  41 2.82  48 2.84
+  32  0.750  0.749  0.499-  57 2.82  64 2.82  40 2.82  49 2.84
+  33  0.875  0.125  0.875-   1 2.94  10 2.94  22 2.94  29 2.94  35 3.37  39 3.37  54 3.37  55 3.37
+                            63 3.37  65 3.37
+  34  0.127  0.125  0.375-  17 2.82  26 2.82   2 2.82   9 2.82
+  35  0.133  0.125  0.875-  18 2.82  25 2.82  10 2.93   1 2.93  33 3.37
+  36  0.126  0.625  0.375-   4 2.82  11 2.82  19 2.83  28 2.83
+  37  0.127  0.625  0.875-  20 2.82  27 2.82   3 2.82  12 2.82
+  38  0.623  0.125  0.375-  13 2.82   6 2.82  21 2.82  30 2.82
+  39  0.617  0.125  0.875-  14 2.82   5 2.82  22 2.93  29 2.93  33 3.37
+  40  0.624  0.625  0.375-  23 2.82  32 2.82   8 2.83  15 2.83
+  41  0.623  0.625  0.875-   7 2.82  16 2.82  31 2.82  24 2.82
+  42  0.125  0.375  0.125-  19 2.82   9 2.84  25 2.84   3 2.84
+  43  0.127  0.377  0.623-  10 2.79   4 2.84  20 2.84  26 2.84
+  44  0.127  0.873  0.127-   1 2.79  11 2.84  17 2.84  27 2.84
+  45  0.125  0.875  0.625-  28 2.82  18 2.84   2 2.84  12 2.84
+  46  0.623  0.377  0.127-  29 2.79  13 2.84  23 2.84   7 2.84
+  47  0.625  0.375  0.625-   8 2.82  14 2.84  24 2.84  30 2.84
+  48  0.625  0.875  0.125-  15 2.82  21 2.84   5 2.84  31 2.84
+  49  0.623  0.873  0.623-  22 2.79  32 2.84   6 2.84  16 2.84
+  50  0.375  0.125  0.127-  17 2.82  13 2.82   5 2.82  25 2.82
+  51  0.375  0.125  0.623-   6 2.82  26 2.82  18 2.82  14 2.82
+  52  0.375  0.625  0.126-   7 2.82  27 2.82  19 2.83  15 2.83
+  53  0.375  0.625  0.624-  16 2.82  20 2.82   8 2.83  28 2.83
+  54  0.875  0.125  0.133-   9 2.82  21 2.82   1 2.93  29 2.93  33 3.37
+  55  0.875  0.125  0.617-  30 2.82   2 2.82  22 2.93  10 2.93  33 3.37
+  56  0.875  0.625  0.127-  11 2.82  23 2.82   3 2.82  31 2.82
+  57  0.875  0.625  0.623-   4 2.82  32 2.82  12 2.82  24 2.82
+  58  0.375  0.376  0.375-  26 2.82  13 2.82  19 2.83   8 2.83
+  59  0.375  0.377  0.875-   7 2.82  20 2.82  14 2.82  25 2.82
+  60  0.375  0.874  0.375-   6 2.82  17 2.82  15 2.83  28 2.83
+  61  0.375  0.873  0.875-  16 2.82  27 2.82   5 2.82  18 2.82
+  62  0.875  0.377  0.375-   4 2.82  23 2.82   9 2.82  30 2.82
+  63  0.875  0.383  0.875-  24 2.82   3 2.82  10 2.93  29 2.93  33 3.37
+  64  0.875  0.873  0.375-  11 2.82  32 2.82   2 2.82  21 2.82
+  65  0.875  0.867  0.875-  12 2.82  31 2.82   1 2.93  22 2.93  33 3.37
+ 
+
+IMPORTANT INFORMATION: All symmetrisations will be switched off!
+NOSYMM: (Re-)initialisation of all symmetry stuff for point group C_1.
+
+
+----------------------------------------------------------------------------------------
+
+                                     Primitive cell                                     
+
+  volume of cell :    2241.2856
+
+  direct lattice vectors                    reciprocal lattice vectors
+    13.086768000  0.000000000  0.000000000     0.076413061  0.000000000  0.000000000
+     0.000000000 13.086768000  0.000000000     0.000000000  0.076413061  0.000000000
+     0.000000000  0.000000000 13.086768000     0.000000000  0.000000000  0.076413061
+
+  length of vectors
+    13.086768000 13.086768000 13.086768000     0.076413061  0.076413061  0.076413061
+
+  position of ions in fractional coordinates (direct lattice)
+     0.004485000  0.995515000  0.004485000
+     0.001247000  0.998753000  0.496959000
+     0.001247000  0.503041000  0.001247000
+     0.999625000  0.501218000  0.498782000
+     0.496959000  0.998753000  0.001247000
+     0.498781000  0.000375000  0.498781000
+     0.498781000  0.501219000  0.999625000
+     0.500528000  0.499472000  0.500528000
+     0.001247000  0.251247000  0.253040000
+     0.004486000  0.254485000  0.745515000
+     0.999625000  0.748782000  0.251218000
+     0.001247000  0.746959000  0.748753000
+     0.498782000  0.249625000  0.251219000
+     0.496960000  0.251247000  0.748753000
+     0.500528000  0.750528000  0.249472000
+     0.498781000  0.748781000  0.750375000
+     0.251219000  0.000375000  0.251219000
+     0.253040000  0.998753000  0.748753000
+     0.249472000  0.499472000  0.249472000
+     0.251219000  0.501219000  0.750375000
+     0.748753000  0.998753000  0.253040000
+     0.745514000  0.995515000  0.745515000
+     0.750375000  0.501219000  0.251219000
+     0.748753000  0.503040000  0.748753000
+     0.253040000  0.251247000  0.001247000
+     0.251219000  0.249625000  0.498781000
+     0.251219000  0.748781000  0.999625000
+     0.249472000  0.750528000  0.500528000
+     0.745514000  0.254485000  0.004485000
+     0.748753000  0.251247000  0.496960000
+     0.748753000  0.746959000  0.001247000
+     0.750375000  0.748782000  0.498782000
+     0.875000000  0.125000000  0.875000000
+     0.126656000  0.125000000  0.375000000
+     0.132779000  0.125000000  0.875000000
+     0.125892000  0.625000000  0.375000000
+     0.126656000  0.625000000  0.875000000
+     0.623344000  0.125000000  0.375000000
+     0.617221000  0.125000000  0.875000000
+     0.624108000  0.625000000  0.375000000
+     0.623344000  0.625000000  0.875000000
+     0.124848000  0.374848000  0.124848000
+     0.127488000  0.377488000  0.622512000
+     0.127488000  0.872512000  0.127488000
+     0.124848000  0.875152000  0.625152000
+     0.622512000  0.377488000  0.127488000
+     0.625152000  0.374848000  0.625152000
+     0.625152000  0.875152000  0.124848000
+     0.622512000  0.872512000  0.622512000
+     0.375000000  0.125000000  0.126656000
+     0.375000000  0.125000000  0.623344000
+     0.375000000  0.625000000  0.125892000
+     0.375000000  0.625000000  0.624108000
+     0.875000000  0.125000000  0.132779000
+     0.875000000  0.125000000  0.617221000
+     0.875000000  0.625000000  0.126656000
+     0.875000000  0.625000000  0.623344000
+     0.375000000  0.375892000  0.375000000
+     0.375000000  0.376656000  0.875000000
+     0.375000000  0.874108000  0.375000000
+     0.375000000  0.873344000  0.875000000
+     0.875000000  0.376656000  0.375000000
+     0.875000000  0.382779000  0.875000000
+     0.875000000  0.873344000  0.375000000
+     0.875000000  0.867221000  0.875000000
+
+  ion indices of the primitive-cell ions
+   primitive index   ion index
+                 1           1
+                 2           2
+                 3           3
+                 4           4
+                 5           5
+                 6           6
+                 7           7
+                 8           8
+                 9           9
+                10          10
+                11          11
+                12          12
+                13          13
+                14          14
+                15          15
+                16          16
+                17          17
+                18          18
+                19          19
+                20          20
+                21          21
+                22          22
+                23          23
+                24          24
+                25          25
+                26          26
+                27          27
+                28          28
+                29          29
+                30          30
+                31          31
+                32          32
+                33          33
+                34          34
+                35          35
+                36          36
+                37          37
+                38          38
+                39          39
+                40          40
+                41          41
+                42          42
+                43          43
+                44          44
+                45          45
+                46          46
+                47          47
+                48          48
+                49          49
+                50          50
+                51          51
+                52          52
+                53          53
+                54          54
+                55          55
+                56          56
+                57          57
+                58          58
+                59          59
+                60          60
+                61          61
+                62          62
+                63          63
+                64          64
+                65          65
+
+----------------------------------------------------------------------------------------
+
+ 
+ 
+ KPOINTS: Automatically generated mesh            
+
+Read explicit list of k-points.
+
+ Found      8 k-points:
+
+ Following reciprocal coordinates:
+            Coordinates               Weight
+  0.000000  0.000000  0.000000      0.125000
+  0.500000  0.000000  0.000000      0.125000
+  0.000000  0.500000  0.000000      0.125000
+  0.500000  0.500000  0.000000      0.125000
+  0.000000  0.000000  0.500000      0.125000
+  0.500000  0.000000  0.500000      0.125000
+  0.000000  0.500000  0.500000      0.125000
+  0.500000  0.500000  0.500000      0.125000
+
+ Following cartesian coordinates:
+            Coordinates               Weight
+  0.000000  0.000000  0.000000      0.125000
+  0.038207  0.000000  0.000000      0.125000
+  0.000000  0.038207  0.000000      0.125000
+  0.038207  0.038207  0.000000      0.125000
+  0.000000  0.000000  0.038207      0.125000
+  0.038207  0.000000  0.038207      0.125000
+  0.000000  0.038207  0.038207      0.125000
+  0.038207  0.038207  0.038207      0.125000
+ 
+ 
+ Subroutine IBZKPT_HF returns following result:
+ ==============================================
+ 
+ Found      8 k-points in 1st BZ
+ the following      8 k-points will be used (e.g. in the exchange kernel)
+ Following reciprocal coordinates:   # in IRBZ
+  0.000000  0.000000  0.000000    0.12500000   1 t-inv F
+  0.500000  0.000000  0.000000    0.12500000   2 t-inv F
+  0.000000  0.500000  0.000000    0.12500000   3 t-inv F
+  0.500000  0.500000  0.000000    0.12500000   4 t-inv F
+  0.000000  0.000000  0.500000    0.12500000   5 t-inv F
+  0.500000  0.000000  0.500000    0.12500000   6 t-inv F
+  0.000000  0.500000  0.500000    0.12500000   7 t-inv F
+  0.500000  0.500000  0.500000    0.12500000   8 t-inv F
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+ Dimension of arrays:
+   k-points           NKPTS =      8   k-points in BZ     NKDIM =      8   number of bands    NBANDS=    770
+   number of dos      NEDOS =   2000   number of ions     NIONS =     65
+   non local maximal  LDIM  =      6   non local SUM 2l+1 LMDIM =     18
+   total plane-waves  NPLWV = 884736
+   max r-space proj   IRMAX =      1   max aug-charges    IRDMAX= 183854
+   dimension x,y,z NGX =    96 NGY =   96 NGZ =   96
+   dimension x,y,z NGXF=   192 NGYF=  192 NGZF=  192
+   support grid    NGXF=   384 NGYF=  384 NGZF=  384
+   ions per type =              33  32
+   NGX,Y,Z   is equivalent  to a cutoff of  12.20, 12.20, 12.20 a.u.
+   NGXF,Y,Z  is equivalent  to a cutoff of  24.39, 24.39, 24.39 a.u.
+
+ SYSTEM =  unknown system                          
+ POSCAR =  Cd33 Te32                               
+
+ Startparameter for this run:
+   NWRITE =      2    write-flag & timer
+   PREC   = accura    normal or accurate (medium, high low for compatibility)
+   ISTART =      0    job   : 0-new  1-cont  2-samecut
+   ICHARG =      1    charge: 1-file 2-atom 10-const
+   ISPIN  =      1    spin polarized calculation?
+   LNONCOLLINEAR =      T non collinear calculations
+   LSORBIT =      T    spin-orbit coupling
+   INIWAV =      1    electr: 0-lowe 1-rand  2-diag
+   LASPH  =      T    aspherical Exc in radial PAW
+ Electronic Relaxation 1
+   ENCUT  =  450.0 eV  33.07 Ry    5.75 a.u.  22.64 22.64 22.64*2*pi/ulx,y,z
+   ENINI  =  450.0     initial cutoff
+   ENAUG  =  456.1 eV  augmentation charge cutoff
+   NELM   =      6;   NELMIN=  2; NELMDL= -5     # of ELM steps 
+   EDIFF  = 0.1E-05   stopping-criterion for ELM
+   LREAL  =      F    real-space projection
+   NLSPLINE    = F    spline interpolate recip. space projectors
+   LCOMPAT=      F    compatible to vasp.4.4
+   GGA_COMPAT  = T    GGA compatible to vasp.4.4-vasp.4.6
+   LMAXPAW     = -100 max onsite density
+   LMAXMIX     =    2 max onsite mixed and CHGCAR
+   VOSKOWN=      0    Vosko Wilk Nusair interpolation
+   ROPT   =    0.00000   0.00000
+ Ionic relaxation
+   EDIFFG = -.1E-01   stopping-criterion for IOM
+   NSW    =      0    number of steps for IOM
+   NBLOCK =      1;   KBLOCK =      1    inner block; outer block 
+   IBRION =     -1    ionic relax: 0-MD 1-quasi-New 2-CG
+   NFREE  =      0    steps in history (QN), initial steepest desc. (CG)
+   ISIF   =      2    stress and relaxation
+   IWAVPR =     10    prediction:  0-non 1-charg 2-wave 3-comb
+   ISYM   =      0    0-nonsym 1-usesym 2-fastsym
+   LCORR  =      T    Harris-Foulkes like correction to forces
+
+   POTIM  = 0.5000    time-step for ionic-motion
+   TEIN   =    0.0    initial temperature
+   TEBEG  =    0.0;   TEEND  =   0.0 temperature during run
+   SMASS  =  -3.00    Nose mass-parameter (am)
+   estimated Nose-frequenzy (Omega)   =  0.10E-29 period in steps = 0.13E+47 mass=  -0.391E-26a.u.
+   SCALEE = 1.0000    scale energy and forces
+   NPACO  =    256;   APACO  = 10.0  distance and # of slots for P.C.
+   PSTRESS=    0.0 pullay stress
+
+  Mass of Ions in am
+   POMASS = 112.41127.60
+  Ionic Valenz
+   ZVAL   =  12.00  6.00
+  Atomic Wigner-Seitz radii
+   RWIGS  =  -1.00 -1.00
+  virtual crystal weights 
+   VCA    =   1.00  1.00
+   NELECT =     588.0000    total number of electrons
+   NUPDOWN=      -1.0000    fix difference up-down
+
+ DOS related values:
+   EMIN   =  10.00;   EMAX   =-10.00  energy-range for DOS
+   EFERMI =   0.00;   METHOD = LEGACY      
+   ISMEAR =     0;   SIGMA  =   0.05  broadening in eV -4-tet -1-fermi 0-gaus
+   EFERMI_NEDOS =   21; number of points for ismear=-14 and -15
+
+ Electronic relaxation 2 (details)
+   IALGO  =     58    algorithm
+   LDIAG  =      T    sub-space diagonalisation (order eigenvalues)
+   LSUBROT=      F    optimize rotation matrix (better conditioning)
+   LROBUST=      F    robust break criterion during scf (extrapolated energy error)
+   ISEARCH=      0    line search for conjugate gradient (0, 1=use gradient)
+   TURBO    =      0    0=normal 1=particle mesh
+   IRESTART =      0    0=no restart 2=restart with 2 vectors
+   NREBOOT  =      0    no. of reboots
+   NMIN     =      0    reboot dimension
+   EREF     =   0.00    reference energy to select bands
+   IMIX   =      4    mixing-type and parameters
+     AMIX     =   0.40;   BMIX     =  1.00
+     AMIX_MAG =   1.60;   BMIX_MAG =  1.00
+     AMIN     =   0.10
+     WC   =   100.;   INIMIX=   1;  MIXPRE=   1;  MAXMIX= -45
+
+ Intra band minimization:
+   WEIMIN = 0.0000     energy-eigenvalue tresh-hold
+   EBREAK =  0.32E-09  absolut break condition
+   DEPER  =   0.30     relativ break condition  
+
+   TIME   =   0.40     timestep for ELM
+
+  volume/ion in A,a.u.               =      34.48       232.69
+  Fermi-wavevector in a.u.,A,eV,Ry     =   1.048017  1.980464 14.943809  1.098339
+  Thomas-Fermi vector in A             =   2.182921
+ 
+ Write flags
+   LWAVE        =      T    write WAVECAR
+   LDOWNSAMPLE  =      F    k-point downsampling of WAVECAR
+   LCHARG       =      T    write CHGCAR
+   LVTOT        =      F    write LOCPOT, total local potential
+   LVHAR        =      T    write LOCPOT, Hartree potential only
+   WRT_POTENTIAL=  hartree ionic  ! write potential to hdf5 file
+   LELF         =      F    write electronic localiz. function (ELF)
+   LORBIT       =     11    0 simple, 1 ext, 2 COOP (PROOUT), +10 PAW based schemes
+
+
+ Python interface
+   PLUGINS active      =      F    recompile with -DPLUGINS to activate
+ 
+ Dipole corrections
+   LMONO      =      F    monopole corrections only (constant potential shift)
+   LDIPOL     =      F    correct potential (dipole corrections)
+   IDIPOL     =      0    1-x, 2-y, 3-z, 4-all directions 
+   EPSILON    =  1.0000000 bulk dielectric constant
+   LVACPOTAV  =      F  vacuum potentials using an averaging scheme for the charge density
+   VACPOTFLAT =  0.1000000 required flatness to determine vacuum potential
+ 
+Coulomb truncation method
+  LTRUNCATE          =      F  Coulomb kernel truncation to be used
+
+ 
+ Exchange correlation treatment:
+   GGA     = PE    functional components
+   XC_C    = 1    coefficients multiplying the functional components
+   LIBXC   =     F    Libxc                    
+   VOSKOWN =     0    Vosko Wilk Nusair interpolation
+   EXXOEP  =     0    0=HF, 1=EXX-LHF (local Hartree Fock) 2=EXX OEP
+   LHFCALC =     T    Hartree Fock is set to
+   LSYMGRAD=     F    symmetrize gradient (conserves proper symmetry)
+   PRECFOCK=fast      Normal, Fast or Accurate (Low or Medium for compatibility)
+   LRHFCALC=     F    long range Hartree Fock
+   LRSCOR  =     F    long range correlation only (use DFT for short range part)
+   LTHOMAS =     F    Thomas Fermi screening in HF
+   LMODELHF=     F    short range full HF, long range fraction AEXX
+   FOCKCORR=     1    mode to apply convergence corrections
+   LFOCKACE=     T    use Adeptively-Compressed-Exchange operator
+   ENCUT4O =  -1.0   cutoff for four orbital integrals eV
+   LMAXFOCK=     4    L truncation for augmentation on plane wave grid
+   LMAXFOCKAE=  -1    L truncation for all-electron charge restoration on plane wave grid
+   NMAXFOCKAE=   1    number of basis functions for all-electron charge restoration
+   LFOCKAEDFT=     F  apply the AE augmentation even for DFT
+   NKREDX  =     1    reduce k-point grid by
+   NKREDY  =     1    reduce k-point grid by
+   NKREDZ  =     1    reduce k-point grid by
+   SHIFTRED=     F    shift reduced grid of Gamma
+   HFKIDENT=     F    idential grid for each k-point
+   ODDONLY =     F    use only odd q-grid points
+   EVENONLY=     F    use only even q-grid points
+   HFALPHA =   -1.0000 decay constant for conv. correction
+   MCALPHA =    0.0000 extent of test-charge in conv. correction in multipole expansion
+   AEXX    =    0.2500 exact exchange contribution
+   HFSCREEN=    0.2000 screening length (either q_TF or 0.3 A-1)
+   HFSCREENC=   0.2000 screening length for correlation (either q_TF or 0.3 A-1)
+   HFRCUT  =    0.0000 spherical cutoff for potential kernel
+   ALDAX   =    0.7500 LDA exchange part
+   AGGAX   =    0.7500 GGA exchange part
+   AMGGAX  =    0.7500 meta-GGA exchange part
+   ALDAC   =    1.0000 LDA correlation
+   AGGAC   =    1.0000 GGA correlation
+   AMGGAC  =    1.0000 meta-GGA correlation
+   ENCUTFOCK=  -1.0 apply spherical cutoff to Coloumb kernel
+   NBANDSGWLOW=     1    first orbital included in HF term
+   NBLOCK_FOCK=    16    blocking factor in FOCK_ACC
+
+ Parameters of functionals:
+   PE:
+     No parameter
+ 
+ Van der Waals corrections
+   IVDW    =     0    specifies the selected vdW correction
+
+ Linear response parameters
+   LEPSILON=     F    determine dielectric tensor
+   LRPA    =     F    only Hartree local field effects (RPA)
+   LNABLA  =     F    use nabla operator in PAW spheres
+   LVEL    =     F    velocity operator in full k-point grid
+   CSHIFT  =0.1000    complex shift for real part using Kramers Kronig
+   OMEGAMAX=  -1.0    maximum frequency
+   DEG_THRESHOLD= 0.2000000E-02 threshold for treating states as degnerate
+   RTIME   =   -0.100 relaxation time in fs
+  (WPLASMAI=    0.000 imaginary part of plasma frequency in eV, 0.658/RTIME)
+   DFIELD  = 0.0000000 0.0000000 0.0000000 field for delta impulse in time
+ 
+  Optional k-point grid parameters
+   LKPOINTS_OPT  =     F    use optional k-point grid
+   KPOINTS_OPT_MODE=     1    mode for optional k-point grid
+ 
+ Orbital magnetization related:
+   ORBITALMAG=     F  switch on orbital magnetization
+   LCHIMAG   =     F  perturbation theory with respect to B field
+   DQ        =  0.001000  dq finite difference perturbation B field
+   LLRAUG    =     F  two centre corrections for induced B field
+   LBONE     =     F  B-component reconstruction in AE one-centre
+   LVGVCALC  =     T  calculate vGv susceptibility
+   LVGVAPPL  =     F  apply vGv susceptibility instead of pGv for G=0
+
+ Random number generation:
+   RANDOM_GENERATOR = DEFAULT
+   PCG_SEED         = not used
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ Static calculation
+ charge density and potential will be updated during run
+ non collinear spin polarized calculation
+ Conjugate gradient for all bands (Freysoldt, et al. PRB 79, 241103 (2009))
+ preconditioned conjugated gradient                                        
+ perform sub-space diagonalisation
+    before iterative eigenvector-optimisation
+ modified Broyden-mixing scheme, WC =      100.0
+ initial mixing is a Kerker type mixing with AMIX =  0.4000 and BMIX =      1.0000
+ Hartree-type preconditioning will be used
+ using additional bands           476
+ reciprocal scheme for non local part
+ use partial core corrections
+ no Harris-corrections to forces 
+ use gradient corrections 
+ use of overlap-Matrix (Vanderbilt PP)
+ Gauss-broadening in eV      SIGMA  =   0.05
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+  energy-cutoff  :      450.00
+  volume of cell :     2241.29
+      direct lattice vectors                 reciprocal lattice vectors
+    13.086768000  0.000000000  0.000000000     0.076413061  0.000000000  0.000000000
+     0.000000000 13.086768000  0.000000000     0.000000000  0.076413061  0.000000000
+     0.000000000  0.000000000 13.086768000     0.000000000  0.000000000  0.076413061
+
+  length of vectors
+    13.086768000 13.086768000 13.086768000     0.076413061  0.076413061  0.076413061
+
+
+ 
+ k-points in units of 2pi/SCALE and weight: Automatically generated mesh            
+   0.00000000  0.00000000  0.00000000       0.125
+   0.03820653  0.00000000  0.00000000       0.125
+   0.00000000  0.03820653  0.00000000       0.125
+   0.03820653  0.03820653  0.00000000       0.125
+   0.00000000  0.00000000  0.03820653       0.125
+   0.03820653  0.00000000  0.03820653       0.125
+   0.00000000  0.03820653  0.03820653       0.125
+   0.03820653  0.03820653  0.03820653       0.125
+ 
+ k-points in reciprocal lattice and weights: Automatically generated mesh            
+   0.00000000  0.00000000  0.00000000       0.125
+   0.50000000  0.00000000  0.00000000       0.125
+   0.00000000  0.50000000  0.00000000       0.125
+   0.50000000  0.50000000  0.00000000       0.125
+   0.00000000  0.00000000  0.50000000       0.125
+   0.50000000  0.00000000  0.50000000       0.125
+   0.00000000  0.50000000  0.50000000       0.125
+   0.50000000  0.50000000  0.50000000       0.125
+ 
+ position of ions in fractional coordinates (direct lattice) 
+   0.00448500  0.99551500  0.00448500
+   0.00124700  0.99875300  0.49695900
+   0.00124700  0.50304100  0.00124700
+   0.99962500  0.50121800  0.49878200
+   0.49695900  0.99875300  0.00124700
+   0.49878100  0.00037500  0.49878100
+   0.49878100  0.50121900  0.99962500
+   0.50052800  0.49947200  0.50052800
+   0.00124700  0.25124700  0.25304000
+   0.00448600  0.25448500  0.74551500
+   0.99962500  0.74878200  0.25121800
+   0.00124700  0.74695900  0.74875300
+   0.49878200  0.24962500  0.25121900
+   0.49696000  0.25124700  0.74875300
+   0.50052800  0.75052800  0.24947200
+   0.49878100  0.74878100  0.75037500
+   0.25121900  0.00037500  0.25121900
+   0.25304000  0.99875300  0.74875300
+   0.24947200  0.49947200  0.24947200
+   0.25121900  0.50121900  0.75037500
+   0.74875300  0.99875300  0.25304000
+   0.74551400  0.99551500  0.74551500
+   0.75037500  0.50121900  0.25121900
+   0.74875300  0.50304000  0.74875300
+   0.25304000  0.25124700  0.00124700
+   0.25121900  0.24962500  0.49878100
+   0.25121900  0.74878100  0.99962500
+   0.24947200  0.75052800  0.50052800
+   0.74551400  0.25448500  0.00448500
+   0.74875300  0.25124700  0.49696000
+   0.74875300  0.74695900  0.00124700
+   0.75037500  0.74878200  0.49878200
+   0.87500000  0.12500000  0.87500000
+   0.12665600  0.12500000  0.37500000
+   0.13277900  0.12500000  0.87500000
+   0.12589200  0.62500000  0.37500000
+   0.12665600  0.62500000  0.87500000
+   0.62334400  0.12500000  0.37500000
+   0.61722100  0.12500000  0.87500000
+   0.62410800  0.62500000  0.37500000
+   0.62334400  0.62500000  0.87500000
+   0.12484800  0.37484800  0.12484800
+   0.12748800  0.37748800  0.62251200
+   0.12748800  0.87251200  0.12748800
+   0.12484800  0.87515200  0.62515200
+   0.62251200  0.37748800  0.12748800
+   0.62515200  0.37484800  0.62515200
+   0.62515200  0.87515200  0.12484800
+   0.62251200  0.87251200  0.62251200
+   0.37500000  0.12500000  0.12665600
+   0.37500000  0.12500000  0.62334400
+   0.37500000  0.62500000  0.12589200
+   0.37500000  0.62500000  0.62410800
+   0.87500000  0.12500000  0.13277900
+   0.87500000  0.12500000  0.61722100
+   0.87500000  0.62500000  0.12665600
+   0.87500000  0.62500000  0.62334400
+   0.37500000  0.37589200  0.37500000
+   0.37500000  0.37665600  0.87500000
+   0.37500000  0.87410800  0.37500000
+   0.37500000  0.87334400  0.87500000
+   0.87500000  0.37665600  0.37500000
+   0.87500000  0.38277900  0.87500000
+   0.87500000  0.87334400  0.37500000
+   0.87500000  0.86722100  0.87500000
+ 
+ position of ions in cartesian coordinates  (Angst):
+   0.05869415 13.02807385  0.05869415
+   0.01631920 13.07044880  6.50358714
+   0.01631920  6.58318086  0.01631920
+  13.08186046  6.55932368  6.52744432
+   6.50358714 13.07044880  0.01631920
+   6.52743123  0.00490754  6.52743123
+   6.52743123  6.55933677 13.08186046
+   6.55029381  6.53647419  6.55029381
+   0.01631920  3.28801120  3.31147577
+   0.05870724  3.33038615  9.75638185
+  13.08186046  9.79913632  3.28763168
+   0.01631920  9.77527914  9.79875680
+   6.52744432  3.26678446  3.28764477
+   6.50360023  3.28801120  9.79875680
+   6.55029381  9.82198581  3.26478219
+   6.52743123  9.79912323  9.81998354
+   3.28764477  0.00490754  3.28764477
+   3.31147577 13.07044880  9.79875680
+   3.26478219  6.53647419  3.26478219
+   3.28764477  6.55933677  9.81998354
+   9.79875680 13.07044880  3.31147577
+   9.75636876 13.02807385  9.75638185
+   9.81998354  6.55933677  3.28764477
+   9.79875680  6.58316777  9.79875680
+   3.31147577  3.28801120  0.01631920
+   3.28764477  3.26678446  6.52743123
+   3.28764477  9.79912323 13.08186046
+   3.26478219  9.82198581  6.55029381
+   9.75636876  3.33038615  0.05869415
+   9.79875680  3.28801120  6.50360023
+   9.79875680  9.77527914  0.01631920
+   9.81998354  9.79913632  6.52744432
+  11.45092200  1.63584600 11.45092200
+   1.65751769  1.63584600  4.90753800
+   1.73764797  1.63584600 11.45092200
+   1.64751940  8.17923000  4.90753800
+   1.65751769  8.17923000 11.45092200
+   8.15755831  1.63584600  4.90753800
+   8.07742803  1.63584600 11.45092200
+   8.16755660  8.17923000  4.90753800
+   8.15755831  8.17923000 11.45092200
+   1.63385681  4.90554881  1.63385681
+   1.66840588  4.94009788  8.14667012
+   1.66840588 11.41836212  1.66840588
+   1.63385681 11.45291119  8.18121919
+   8.14667012  4.94009788  1.66840588
+   8.18121919  4.90554881  8.18121919
+   8.18121919 11.45291119  1.63385681
+   8.14667012 11.41836212  8.14667012
+   4.90753800  1.63584600  1.65751769
+   4.90753800  1.63584600  8.15755831
+   4.90753800  8.17923000  1.64751940
+   4.90753800  8.17923000  8.16755660
+  11.45092200  1.63584600  1.73764797
+  11.45092200  1.63584600  8.07742803
+  11.45092200  8.17923000  1.65751769
+  11.45092200  8.17923000  8.15755831
+   4.90753800  4.91921140  4.90753800
+   4.90753800  4.92920969 11.45092200
+   4.90753800 11.43924860  4.90753800
+   4.90753800 11.42925031 11.45092200
+  11.45092200  4.92920969  4.90753800
+  11.45092200  5.00933997 11.45092200
+  11.45092200 11.42925031  4.90753800
+  11.45092200 11.34912003 11.45092200
+ 
+ Euler angles ALPHA=     0.0000000  BETA=     0.0000000
+
+ transformation matrix from SAXIS to cartesian coordinates
+ ---------------------------------------------------------
+     1.0000000 m_x    -0.0000000 m_y     0.0000000 m_z
+     0.0000000 m_x     1.0000000 m_y     0.0000000 m_z
+    -0.0000000 m_x     0.0000000 m_y     1.0000000 m_z
+
+ transformation matrix from cartesian coordinates to SAXIS
+ ---------------------------------------------------------
+     1.0000000 m_x     0.0000000 m_y    -0.0000000 m_z
+    -0.0000000 m_x     1.0000000 m_y     0.0000000 m_z
+     0.0000000 m_x     0.0000000 m_y     1.0000000 m_z
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ k-point     1 :   0.0000 0.0000 0.0000  plane waves:   97002
+ k-point     2 :   0.5000 0.0000 0.0000  plane waves:   97356
+ k-point     3 :   0.0000 0.5000 0.0000  plane waves:   97356
+ k-point     4 :   0.5000 0.5000 0.0000  plane waves:   96960
+ k-point     5 :   0.0000 0.0000 0.5000  plane waves:   97356
+ k-point     6 :   0.5000 0.0000 0.5000  plane waves:   96960
+ k-point     7 :   0.0000 0.5000 0.5000  plane waves:   96960
+ k-point     8 :   0.5000 0.5000 0.5000  plane waves:   96832
+
+ maximum and minimum number of plane-waves per node :     97356    96832
+
+ maximum number of plane-waves:     97356
+ maximum index in each direction: 
+   IXMAX=   22   IYMAX=   22   IZMAX=   22
+   IXMIN=  -23   IYMIN=  -23   IZMIN=  -23
+
+
+ serial   3D FFT for wavefunctions
+ parallel 3D FFT for charge:
+    minimum data exchange during FFTs selected (reduces bandwidth)
+
+
+ FFT grid for exact exchange (Hartree Fock) 
+  NGX = 48; NGY = 48; NGZ = 48
+
+ 
+ Radii for the augmentation spheres in the non-local exchange
+ for species   1 augmentation radius   1.444 (default was   1.070)
+       energy cutoff for augmentation   1800.0
+ for species   2 augmentation radius   1.606 (default was   1.190)
+       energy cutoff for augmentation   1800.0
+ Maximum index for augmentation-charges in exchange           864
+  SETUP_FOCK is finished
+
+ total amount of memory used by VASP MPI-rank0 33470668. kBytes
+=======================================================================
+
+   base                                    :      30000. kBytes
+   nonl-proj                               :     162779. kBytes
+   fftplans                                :    2066736. kBytes
+   grid                                    :    1811939. kBytes
+   one-center                              :       4043. kBytes
+   HF                                      :        129. kBytes
+   nonlr-proj                              :      11548. kBytes
+   wavefun                                 :   29383494. kBytes
+ 
+     INWAV:  cpu time      0.0002: real time      0.0003
+ Broyden mixing: mesh for mixing (old mesh)
+   NGX = 45   NGY = 45   NGZ = 45
+  (NGX  =192   NGY  =192   NGZ  =192)
+  gives a total of  91125 points
+
+ initial charge density was supplied:
+ charge density of overlapping atoms calculated
+ number of electron     588.0000000 magnetization      65.0000000     65.0000000     65.0000000
+ keeping initial charge density in first step
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ Maximum index for augmentation-charges        178205 (set IRDMAX)
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ First call to EWALD:  gamma=   0.135
+ Maximum number of real-space cells   3x   3x   3
+ Maximum number of reciprocal cells   3x   3x   3
+
+    FEWALD:  cpu time      0.2286: real time      0.2295
+
+
+--------------------------------------- Ionic step        1  -------------------------------------------
+
+
+
+
+--------------------------------------- Iteration      1(   1)  ---------------------------------------
+
+
+    POTLOK:  cpu time      0.1987: real time      0.1996
+    SETDIJ:  cpu time     21.1696: real time      5.6697
+    TRIAL :  cpu time      9.4713: real time      9.7744
+    CORREC:  cpu time      0.0025: real time      0.0025
+    --------------------------------------------
+      LOOP:  cpu time     33.8748: real time     18.6925
+
+ eigenvalue-minimisations  : 12712
+ total energy-change (2. order) :-0.6561165E+05  (-0.2662656E+05)
+ number of electron     588.0000000 magnetization      65.0000000     65.0000000     65.0000000
+ augmentation part      588.0000000 magnetization      65.0000000     65.0000000     65.0000000
+
+ Free energy of the ion-electron system (eV)
+  ---------------------------------------------------
+  alpha Z        PSCENC =      1642.45118531
+  Ewald energy   TEWEN  =    -33940.17512409
+  -Hartree energ DENC   =    -17077.89199325
+  -exchange      EXHF   =         0.00000000
+  -V(xc)+E(xc)   XCENC  =      -705.19542618
+  PAW double counting   =     46123.44547363  -111597.0089++++ Slurm JobID = 130406
+rm: cannot remove 'WAVECAR': No such file or directory
+GpuFreq=control_disabled
+GpuFreq=control_disabled
+GpuFreq=control_disabled
+GpuFreq=control_disabled
+--------------------------------------------------------------------------
+WARNING: Open MPI will create a shared memory backing file in a
+directory that appears to be mounted on a network filesystem.
+Creating the shared memory backup file on a network file system, such
+as NFS or Lustre is not recommended -- it may cause excessive network
+traffic to your file servers and/or cause shared memory traffic in
+Open MPI to be much slower than expected.
+
+You may want to check what the typical temporary directory is on your
+node.  Possible sources of the location of this temporary directory
+include the $TEMPDIR, $TEMP, and $TMP environment variables.
+
+Note, too, that system administrators can set a list of filesystems
+where Open MPI is disallowed from creating temporary files by setting
+the MCA parameter "orte_no_session_dir".
+
+  Local host: tu-c0r2n00
+  Filename:   /mnt/lustre/tursafs1/home/z01/z01/dc-turn1/benchmarks/VASP/CdTe_Hybrid/6.5.1-GCC-MKL-OpenACC/CdTe_c2ef4f43-72b2-4987-80b1-a09633fdda35/ompi.tu-c0r2n00.20358/jf.64870/0/shared_mem_cuda_pool.tu-c0r2n00
+
+You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
+disable this message.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: Open MPI will create a shared memory backing file in a
+directory that appears to be mounted on a network filesystem.
+Creating the shared memory backup file on a network file system, such
+as NFS or Lustre is not recommended -- it may cause excessive network
+traffic to your file servers and/or cause shared memory traffic in
+Open MPI to be much slower than expected.
+
+You may want to check what the typical temporary directory is on your
+node.  Possible sources of the location of this temporary directory
+include the $TEMPDIR, $TEMP, and $TMP environment variables.
+
+Note, too, that system administrators can set a list of filesystems
+where Open MPI is disallowed from creating temporary files by setting
+the MCA parameter "orte_no_session_dir".
+
+  Local host: tu-c0r2n03
+--------------------------------------------------------------------------
+WARNING: Open MPI will create a shared memory backing file in a
+directory that appears to be mounted on a network filesystem.
+Creating the shared memory backup file on a network file system, such
+as NFS or Lustre is not recommended -- it may cause excessive network
+traffic to your file servers and/or cause shared memory traffic in
+Open MPI to be much slower than expected.
+
+You may want to check what the typical temporary directory is on your
+node.  Possible sources of the location of this temporary directory
+include the $TEMPDIR, $TEMP, and $TMP environment variables.
+
+Note, too, that system administrators can set a list of filesystems
+where Open MPI is disallowed from creating temporary files by setting
+the MCA parameter "orte_no_session_dir".
+
+  Local host: tu-c0r2n09
+--------------------------------------------------------------------------
+WARNING: Open MPI will create a shared memory backing file in a
+directory that appears to be mounted on a network filesystem.
+Creating the shared memory backup file on a network file system, such
+as NFS or Lustre is not recommended -- it may cause excessive network
+traffic to your file servers and/or cause shared memory traffic in
+Open MPI to be much slower than expected.
+
+You may want to check what the typical temporary directory is on your
+node.  Possible sources of the location of this temporary directory
+include the $TEMPDIR, $TEMP, and $TMP environment variables.
+
+Note, too, that system administrators can set a list of filesystems
+where Open MPI is disallowed from creating temporary files by setting
+the MCA parameter "orte_no_session_dir".
+
+  Local host: tu-c0r2n06
+  Filename:   /mnt/lustre/tursafs1/home/z01/z01/dc-turn1/benchmarks/VASP/CdTe_Hybrid/6.5.1-GCC-MKL-OpenACC/CdTe_c2ef4f43-72b2-4987-80b1-a09633fdda35/ompi.tu-c0r2n03.20358/jf.64870/0/shared_mem_cuda_pool.tu-c0r2n03
+
+You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
+disable this message.
+--------------------------------------------------------------------------
+  Filename:   /mnt/lustre/tursafs1/home/z01/z01/dc-turn1/benchmarks/VASP/CdTe_Hybrid/6.5.1-GCC-MKL-OpenACC/CdTe_c2ef4f43-72b2-4987-80b1-a09633fdda35/ompi.tu-c0r2n09.20358/jf.64870/0/shared_mem_cuda_pool.tu-c0r2n09
+
+You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
+disable this message.
+--------------------------------------------------------------------------
+  Filename:   /mnt/lustre/tursafs1/home/z01/z01/dc-turn1/benchmarks/VASP/CdTe_Hybrid/6.5.1-GCC-MKL-OpenACC/CdTe_c2ef4f43-72b2-4987-80b1-a09633fdda35/ompi.tu-c0r2n06.20358/jf.64870/0/shared_mem_cuda_pool.tu-c0r2n06
+
+You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
+disable this message.
+--------------------------------------------------------------------------
+[tu-c0r2n00:750396] 1 more process has sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[tu-c0r2n00:750396] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[tu-c0r2n03:672516] 1 more process has sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[tu-c0r2n03:672516] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[tu-c0r2n09:742576] 1 more process has sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[tu-c0r2n09:742576] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[tu-c0r2n06:536578] 1 more process has sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[tu-c0r2n06:536578] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+ running   16 mpi-ranks, with    8 threads/rank, on    4 nodes
+ distrk:  each k-point on    1 cores,   16 groups
+ distr:  one band on    1 cores,    1 groups
+ Offloading initialized ...   16 GPUs detected
+ vasp.6.5.1 10Mar25 (build Dec 23 2025 12:45:43) complex                         
+ POSCAR found type information on POSCAR CdTe
+ POSCAR found :  2 types and      65 ions
+ -----------------------------------------------------------------------------
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|     You requested a magnetic or noncollinear calculation, but did not       |
+|     specify the initial magnetic moment with the MAGMOM tag. Note that      |
+|     a default of 1 will be used for all atoms. This ferromagnetic setup     |
+|     may break the symmetry of the crystal, in particular it may rule        |
+|     out finding an antiferromagnetic solution. Thence, we recommend         |
+|     setting the initial magnetic moment manually or verifying carefully     |
+|     that this magnetic setup is desired.                                    |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ scaLAPACK will be used selectively (only on CPU)
+ -----------------------------------------------------------------------------
+|                                                                             |
+|               ----> ADVICE to this user running VASP <----                  |
+|                                                                             |
+|     You have a (more or less) 'large supercell' and for larger cells it     |
+|     might be more efficient to use real-space projection operators.         |
+|     Therefore, try LREAL= Auto in the INCAR file.                           |
+|     Mind: For very accurate calculation, you might also keep the            |
+|     reciprocal projection scheme (i.e. LREAL=.FALSE.).                      |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+Out of memory allocating 113246208 bytes of device memory
+Failing in Thread:1
+total/free CUDA memory: 42409000960/109182976
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 8.0, threadid=1
+Hint: specify 0x800 bit in NV_ACC_DEBUG for verbose info.
+host:0x7d3d940 device:0x146d75ffa800 size:32 presentcount:0+14 line:643 name:var%comm
+host:0x7d3d960 device:0x146d75ffb000 size:32 presentcount:0+15 line:652 name:var%comm_kinter
+host:0x7d3d980 device:0x146d75ffd000 size:32 presentcount:0+17 line:655 name:var%comm_kin
+host:0x7d3d9a0 device:0x146d75ffaa00 size:32 presentcount:0+14 line:646 name:var%comm_inter
+host:0x7d3d9c0 device:0x146d75ffae00 size:32 presentcount:0+30 line:649 name:var%comm_inb
+host:0x7d52380 device:0x146ddf6ecf00 size:8 presentcount:0+1 line:-1 name:_setexm_struct_def_21
+host:0x7d5d5c0 device:0x146ddf6ed000 size:28 presentcount:0+1 line:-1 name:_ml_ff_constant_21
+host:0x7d5ec00 device:0x146ddf6ed100 size:30437 presentcount:0+1 line:-1 name:_ml_ff_taglist_21
+host:0x7d97680 device:0x146ddf6f4800 size:8 presentcount:0+1 line:-1 name:_mopenacc_tutor_21
+host:0x7daf400 device:0x146ddf6f4c00 size:32 presentcount:0+1 line:-1 name:_mbj_21
+host:0x7dbd540 device:0x146ddf6f4f00 size:8 presentcount:0+1 line:-1 name:_sym_prec_21
+host:0x7dffd40 device:0x146ddf6f5000 size:344 presentcount:0+1 line:-1 name:_tet_21
+host:0x7e1f940 device:0x146ddf6f5200 size:392 presentcount:0+1 line:-1 name:_mymath_21
+host:0x8037d20 device:0x146d75ff8a00 size:4600 presentcount:0+8 line:614 name:var
+host:0x8038f20 device:0x146d73fff000 size:1904 presentcount:0+2 line:403 name:var
+host:0x803b0f0 device:0x146ddf3ff600 size:832 presentcount:0+4 line:2639 name:hamiltonian
+host:0x8055fd0 device:0x146d7dfffa00 size:272 presentcount:0+1 line:205 name:descriptor
+host:0x80562e8 device:0x145ce1bff200 size:2584 presentcount:0+1 line:428 name:var
+host:0x8056d00 device:0x146d4dfff200 size:2888 presentcount:0+1 line:682 name:var
+host:0x8057848 device:0x146d4d1fde00 size:4840 presentcount:0+14 line:517 name:var
+host:0x8088ec0 device:0x146d77fff400 size:2584 presentcount:0+2 line:428 name:var
+host:0x80898e0 device:0x146d75ff8000 size:2176 presentcount:0+2 line:742 name:var
+host:0x808a160 device:0x146d75ffe800 size:2176 presentcount:0+1 line:742 name:var
+host:0x808a9e0 device:0x146d77ffe600 size:2176 presentcount:0+1 line:742 name:var
+host:0x808cb50 device:0x146d4dfff000 size:288 presentcount:0+2 line:266 name:latt_cur
+host:0x808f630 device:0x146d75ffbc00 size:4840 presentcount:0+63 line:517 name:var
+host:0x8090920 device:0x146d4bdfd800 size:4840 presentcount:0+6 line:517 name:var
+host:0x8091c10 device:0x146d4b9fd000 size:4840 presentcount:0+7 line:517 name:var
+host:0x8097be0 device:0x146d4dbfda00 size:288 presentcount:0+1 line:567 name:var
+host:0x8097d00 device:0x146d4dbfde00 size:288 presentcount:0+1 line:567 name:var
+host:0x8667000 device:0x146ddf602800 size:960024 presentcount:0+1 line:-1 name:_setexm_struct_def_16
+host:0x87ad100 device:0x146ddf6f4900 size:580 presentcount:3+1 line:-1 name:_wpbe_16
+host:0x87ad8c0 device:0x146ddf6f4d00 size:288 presentcount:0+1 line:-1 name:_mbj_16
+host:0xf757860 device:0x146d79fff200 size:2176 presentcount:0+1 line:541 name:wace
+host:0xf75bfc0 device:0x146d79ff8c00 size:2176 presentcount:0+1 line:250 name:wxi
+host:0xf762ac0 device:0x146ddf6f5400 size:624 presentcount:0+1 line:-1 name:_mlr_optic_16
+host:0x10e7e1b0 device:0x146d4bdff800 size:504 presentcount:0+1 line:480 name:var
+host:0x10f96230 device:0x146d75ffb200 size:260 presentcount:0+5 line:405 name:var%ityp(:)
+host:0x10ff9da0 device:0x146d75ffe400 size:576 presentcount:0+2 line:405 name:var%cqfak(:,:)
+host:0x1120ba50 device:0x146d75fffa00 size:192 presentcount:0+13 line:616 name:var%vkpt(:,:)
+host:0x11279df0 device:0x146d7bfffe00 size:192 presentcount:0+5 line:519 name:var%lpctz(:)
+host:0x11279ee0 device:0x146d7bfffc00 size:192 presentcount:0+5 line:519 name:var%lpcty(:)
+host:0x118bed80 device:0x146d7dfff800 size:512 presentcount:0+1 line:905 name:var%rssymop(:,:,:)
+host:0x188ce4a0 device:0x146d75ffdc00 size:1560 presentcount:0+5 line:405 name:var%posion(:,:)
+host:0x188fe9e0 device:0x146d4dffd000 size:8000 presentcount:0+2 line:857 name:var%pspcor(:)
+host:0x18900ec0 device:0x1465833e0000 size:27408 presentcount:0+2 line:853 name:var(:)
+host:0x18917ec0 device:0x146d75ff9e00 size:24 presentcount:0+4 line:466 name:var%lps(:)
+host:0x18922080 device:0x146d75ffa200 size:24 presentcount:0+4 line:466 name:var%lps(:)
+host:0x1892faf0 device:0x146d77fff200 size:8 presentcount:0+5 line:405 name:var%nityp(:)
+host:0x18942780 device:0x146d79ffc600 size:8000 presentcount:0+2 line:857 name:var%psprho(:)
+host:0x189560c0 device:0x146d7dfff600 size:288 presentcount:0+1 line:895 name:var%isymop(:,:,:)
+host:0x189704d0 device:0x146d7bffc600 size:8000 presentcount:0+2 line:857 name:var%pspcor(:)
+host:0x18984dd0 device:0x146d7dffc600 size:8000 presentcount:0+2 line:857 name:var%psprho(:)
+host:0x1899b520 device:0x146561c3f000 size:40000 presentcount:0+2 line:857 name:var%psp(:,:)
+host:0x189a5190 device:0x146d77ff8000 size:24000 presentcount:0+2 line:466 name:var%psprnl(:,:,:)
+host:0x18b020a0 device:0x146561c48e00 size:40000 presentcount:0+2 line:857 name:var%psp(:,:)
+host:0x18b0bd10 device:0x146599fc4600 size:24000 presentcount:0+2 line:466 name:var%psprnl(:,:,:)
+host:0x191d23f0 device:0x146d75fffc00 size:64 presentcount:0+11 line:616 name:var%wtkpt(:)
+host:0x191d24b0 device:0x146d75fff400 size:8 presentcount:0+14 line:616 name:var%nityp(:)
+host:0x191d24e0 device:0x146d77ffe200 size:64 presentcount:0+8 line:616 name:var%nb_totk(:,:)
+host:0x191d2ab0 device:0x146573fff400 size:2920 presentcount:0+1 line:874 name:var
+host:0x191d3640 device:0x146d4d1ffc00 size:16 presentcount:0+2 line:430 name:var%psrmax(:)
+host:0x191d3680 device:0x146d75fff600 size:260 presentcount:0+14 line:616 name:var%ityp(:)
+host:0x191d37b0 device:0x146d73fff800 size:8 presentcount:0+13 line:616 name:var%lmmax(:)
+host:0x191d37e0 device:0x146d75fff800 size:8 presentcount:0+14 line:616 name:var%nt_global(:)
+host:0x191d3810 device:0x146d77ffe000 size:260 presentcount:0+13 line:616 name:var%npro_pos(:)
+host:0x191d3940 device:0x146d73fffa00 size:264 presentcount:0+13 line:616 name:var%lmbase(:)
+host:0x191d3a70 device:0x146d75ffb400 size:8 presentcount:0+2 line:405 name:var%lmmax(:)
+host:0x191d3aa0 device:0x146d4d1ffa00 size:8 presentcount:0+2 line:430 name:var%channels(:)
+host:0x191d3ad0 device:0x146d4d1ff800 size:8 presentcount:0+2 line:430 name:var%lmmax(:)
+host:0x191d3b00 device:0x146d75ffba00 size:8 presentcount:0+2 line:430 name:var%lmax(:)
+host:0x191d3b30 device:0x146d75ffd200 size:384 presentcount:0+9 line:519 name:var%lpctx(:)
+host:0x191d3ce0 device:0x146d75ffd400 size:384 presentcount:0+9 line:519 name:var%lpcty(:)
+host:0x191d3e90 device:0x146d75ffd600 size:384 presentcount:0+9 line:519 name:var%lpctz(:)
+host:0x191d4040 device:0x146d75ffd800 size:384 presentcount:0+9 line:519 name:var%lpctx_(:)
+host:0x191d41f0 device:0x146d75ffda00 size:384 presentcount:0+9 line:519 name:var%lpcty_(:)
+host:0x191d43a0 device:0x146d75ffac00 size:384 presentcount:0+9 line:519 name:var%lpctz_(:)
+host:0x191d4550 device:0x146d4bdfec00 size:384 presentcount:0+1 line:519 name:var%lpctx(:)
+host:0x191d4700 device:0x146d4bdfee00 size:384 presentcount:0+1 line:519 name:var%lpcty(:)
+host:0x191d48b0 device:0x146d4bdff000 size:384 presentcount:0+1 line:519 name:var%lpctz(:)
+host:0x191d4a60 device:0x146d4bdff200 size:384 presentcount:0+1 line:519 name:var%lpctx_(:)
+host:0x191d4c10 device:0x146d4bdff400 size:384 presentcount:0+1 line:519 name:var%lpcty_(:)
+host:0x191d4dc0 device:0x146d4bdff600 size:384 presentcount:0+1 line:519 name:var%lpctz_(:)
+host:0x191d4f70 device:0x146d4b9fe400 size:768 presentcount:0+1 line:519 name:var%lpctx(:)
+host:0x191d52a0 device:0x146d4b9fe800 size:768 presentcount:0+1 line:519 name:var%lpcty(:)
+host:0x191d55d0 device:0x146d4b9fec00 size:768 presentcount:0+1 line:519 name:var%lpctz(:)
+host:0x191d5900 device:0x146d4b9ff000 size:768 presentcount:0+1 line:519 name:var%lpctx_(:)
+host:0x191d5c30 device:0x146d4b9ff400 size:768 presentcount:0+1 line:519 name:var%lpcty_(:)
+host:0x191d5f60 device:0x146d4b9ff800 size:768 presentcount:0+1 line:519 name:var%lpctz_(:)
+host:0x191d7b50 device:0x146d4dbfdc00 size:384 presentcount:0+1 line:569 name:var%ind1(:)
+host:0x191d7d00 device:0x146d73fffc00 size:32 presentcount:0+8 line:616 name:var%nplwkp(:)
+host:0x191d7d50 device:0x146d73fffe00 size:32 presentcount:0+8 line:616 name:var%ngvector(:)
+host:0x191d7da0 device:0x146d77ffde00 size:32 presentcount:0+8 line:616 name:var%ngvector_pos(:)
+host:0x191d7df0 device:0x146d75fffe00 size:32 presentcount:0+8 line:616 name:var%nplwkp_tot(:)
+host:0x191d7e40 device:0x146d4bdffc00 size:8 presentcount:0+1 line:499 name:var%ptr(:)
+host:0x191da300 device:0x146573f68000 size:147456 presentcount:0+1 line:482 name:var%i2(:)
+host:0x191fe330 device:0x146573f8c000 size:147456 presentcount:0+1 line:482 name:var%i3(:)
+host:0x19222360 device:0x146d4dbfe000 size:768 presentcount:0+1 line:569 name:var%ind1(:)
+host:0x19222690 device:0x146561c00000 size:36864 presentcount:0+1 line:482 name:var%i2(:)
+host:0x1922b6c0 device:0x146d77ffe400 size:32 presentcount:0+8 line:616 name:var%luseinv(:)
+host:0x1922b710 device:0x146d75ffb600 size:32 presentcount:0+8 line:616 name:var%at_gamma(:)
+host:0x1922b760 device:0x146d75ffb800 size:264 presentcount:0+2 line:405 name:var%lmbase(:)
+host:0x1922b890 device:0x146d4d1ffe00 size:16 presentcount:0+2 line:430 name:var%rsmooth(:)
+host:0x1922b8d0 device:0x146d75ff9c00 size:384 presentcount:0+2 line:464 name:var
+host:0x1922ba50 device:0x146d75ffa000 size:384 presentcount:0+2 line:464 name:var
+host:0x1922bc00 device:0x146d4bdffa00 size:8 presentcount:0+1 line:499 name:var%n(:)
+host:0x1922bc30 device:0x146d4dbfd000 size:8 presentcount:0+1 line:499 name:var%ptri(:)
+host:0x1922bc60 device:0x146d4bdffe00 size:8 presentcount:0+1 line:499 name:var%ni(:)
+host:0x1922bc90 device:0x146d4dbfd400 size:8 presentcount:0+1 line:499 name:var%ptr(:)
+host:0x1922bcc0 device:0x146d4dbfd200 size:8 presentcount:0+1 line:499 name:var%n(:)
+host:0x1922bcf0 device:0x146d4dbfd800 size:8 presentcount:0+1 line:499 name:var%ptri(:)
+host:0x1922bd20 device:0x146d4dbfd600 size:8 presentcount:0+1 line:499 name:var%ni(:)
+host:0x1922bd50 device:0x146d75ffa600 size:8 presentcount:0+1 line:499 name:var%ptr(:)
+host:0x1922bd80 device:0x146d75ffa400 size:8 presentcount:0+1 line:499 name:var%n(:)
+host:0x1922bdb0 device:0x146d4b9ffe00 size:8 presentcount:0+1 line:499 name:var%ptri(:)
+host:0x1922bde0 device:0x146d4b9ffc00 size:8 presentcount:0+1 line:499 name:var%ni(:)
+host:0x1922be10 device:0x146d4bdfd200 size:8 presentcount:0+1 line:499 name:var%ptr(:)
+host:0x1922be40 device:0x146d4bdfd000 size:8 presentcount:0+1 line:499 name:var%n(:)
+host:0x1922be70 device:0x146d4bdfd600 size:8 presentcount:0+1 line:499 name:var%ptri(:)
+host:0x1922bea0 device:0x146d4bdfd400 size:8 presentcount:0+1 line:499 name:var%ni(:)
+host:0x1922c080 device:0x146d7dffea00 size:32 presentcount:0+1 line:889 name:var%spinflip(:)
+host:0x1922c120 device:0x146d7dffe800 size:32 presentcount:0+1 line:886 name:var%nequiv(:)
+host:0x1922c170 device:0x146d7dffe600 size:32 presentcount:0+1 line:883 name:var%linv(:)
+host:0x1922c1c0 device:0x146d7dffec00 size:2080 presentcount:0+1 line:892 name:var%rotmap(:,:)
+host:0x19620520 device:0x146573e48000 size:589824 presentcount:0+1 line:482 name:var%i2(:)
+host:0x196b15d0 device:0x146573ed8000 size:589824 presentcount:0+1 line:482 name:var%i3(:)
+host:0x19741600 device:0x1465835b9e00 size:147456 presentcount:0+2 line:482 name:var%i2(:)
+host:0x19765630 device:0x146573e00000 size:147456 presentcount:0+2 line:482 name:var%i3(:)
+host:0x19789660 device:0x146573e24000 size:147456 presentcount:0+2 line:482 name:var%index(:,:)
+host:0x197ad690 device:0x146561c1b000 size:147456 presentcount:0+1 line:569 name:var%indcol(:)
+host:0x197d16c0 device:0x146573fb0000 size:147456 presentcount:0+1 line:482 name:var%i2(:)
+host:0x197f56f0 device:0x146573fd4000 size:147456 presentcount:0+1 line:482 name:var%i3(:)
+host:0x19819720 device:0x146561c09000 size:36864 presentcount:0+1 line:482 name:var%i3(:)
+host:0x19822750 device:0x1465835dde00 size:36864 presentcount:0+1 line:482 name:var%i2(:)
+host:0x1982b780 device:0x1465835e6e00 size:36864 presentcount:0+1 line:482 name:var%i3(:)
+host:0x198347b0 device:0x1465835efe00 size:36864 presentcount:0+1 line:482 name:var%index(:,:)
+host:0x1983d7e0 device:0x146561c12000 size:36864 presentcount:0+1 line:569 name:var%indcol(:)
+host:0x19846810 device:0x146d4dbf4000 size:36864 presentcount:0+9 line:482 name:var%i2(:)
+host:0x1984f840 device:0x146d4dff4000 size:36864 presentcount:0+9 line:482 name:var%i3(:)
+host:0x19858870 device:0x146d4bdf4000 size:36864 presentcount:0+19 line:482 name:var%index(:,:)
+host:0x198618a0 device:0x146d73ff6000 size:36864 presentcount:0+19 line:482 name:var%i2(:)
+host:0x1986a8d0 device:0x146d4b9f4000 size:36864 presentcount:0+19 line:482 name:var%i3(:)
+host:0x19874b90 device:0x146599e48000 size:1557696 presentcount:0+8 line:616 name:var%nindpw(:,:)
+host:0x199f1080 device:0x146599e00000 size:294912 presentcount:0+8 line:616 name:var%pl_index(:,:)
+host:0x19a390b0 device:0x146d79f74600 size:294912 presentcount:0+8 line:616 name:var%pl_col(:,:)
+host:0x19a82580 device:0x14658c000000 size:6230784 presentcount:0+8 line:616 name:var%datake(:,:,:)
+host:0x1a074f60 device:0x146d7be00000 size:1557696 presentcount:0+8 line:616 name:var%igx(:,:)
+host:0x1a1f2d10 device:0x146d7de00000 size:1557696 presentcount:0+8 line:616 name:var%igy(:,:)
+host:0x1a370cd0 device:0x146d7fe00000 size:1557696 presentcount:0+8 line:616 name:var%igz(:,:)
+host:0x1a5253e0 device:0x146563c00000 size:3538944 presentcount:0+1 line:499 name:var%tbl(:)
+host:0x1a8f59a0 device:0x146d7bfffa00 size:192 presentcount:0+5 line:519 name:var%lpctx(:)
+host:0x1aa67ff0 device:0x146d79fffc00 size:32 presentcount:0+3 line:616 name:var%ngvector(:)
+host:0x1ab18c30 device:0x146d79ffee00 size:8 presentcount:0+1 line:684 name:var%lmmax(:)
+host:0x1ab4cd50 device:0x1465835ffc00 size:8 presentcount:0+1 line:430 name:var%channels(:)
+host:0x1ab4cd80 device:0x1465835ffe00 size:16 presentcount:0+1 line:430 name:var%psrmax(:)
+host:0x1ab4d510 device:0x146d79fffe00 size:32 presentcount:0+3 line:616 name:var%ngvector_pos(:)
+host:0x1ab4d560 device:0x146599fffa00 size:32 presentcount:0+3 line:616 name:var%nplwkp_tot(:)
+host:0x1ab790a0 device:0x146ddf3ffe00 size:32 presentcount:0+3 line:616 name:var%nplwkp(:)
+host:0x1ab7a510 device:0x146d79ffe800 size:192 presentcount:0+5 line:519 name:var%lpctx_(:)
+host:0x1ab7ed10 device:0x146599fffc00 size:64 presentcount:0+3 line:616 name:var%nb_totk(:,:)
+host:0x1aba4190 device:0x145ce1bfaa00 size:9216 presentcount:0+10 line:482 name:var%index(:,:)
+host:0x1aba65c0 device:0x145ce19faa00 size:9216 presentcount:0+10 line:482 name:var%i2(:)
+host:0x1aba89f0 device:0x145ce19fce00 size:9216 presentcount:0+10 line:482 name:var%i3(:)
+host:0x1abaae20 device:0x146573ffa400 size:9216 presentcount:0+2 line:482 name:var%i2(:)
+host:0x1abb9610 device:0x146d79fff000 size:264 presentcount:0+1 line:684 name:var%lmbase(:)
+host:0x1abe1d80 device:0x146d4d1ff200 size:192 presentcount:0+2 line:519 name:var%lpctx(:)
+host:0x1abe1e70 device:0x146d4d1ff400 size:192 presentcount:0+2 line:519 name:var%lpcty(:)
+host:0x1abe1f60 device:0x146d4d1ff600 size:192 presentcount:0+2 line:519 name:var%lpctz(:)
+host:0x1abe2050 device:0x145ce19ff200 size:192 presentcount:0+2 line:519 name:var%lpctx_(:)
+host:0x1abe2140 device:0x145ce19ff400 size:192 presentcount:0+2 line:519 name:var%lpcty_(:)
+host:0x1abe2230 device:0x145ce19ff600 size:192 presentcount:0+2 line:519 name:var%lpctz_(:)
+host:0x1abe36c0 device:0x146d4dfffe00 size:260 presentcount:0+1 line:684 name:var%npro_pos(:)
+host:0x1abe3890 device:0x145ce19ff800 size:16 presentcount:0+1 line:430 name:var%rsmooth(:)
+host:0x1abe38d0 device:0x1465835ffa00 size:8 presentcount:0+1 line:430 name:var%lmmax(:)
+host:0x1abe3b80 device:0x145ce19ffc00 size:264 presentcount:0+1 line:430 name:var%lmbase(:)
+host:0x1abe5390 device:0x146d79ffea00 size:192 presentcount:0+5 line:519 name:var%lpcty_(:)
+host:0x1abe5480 device:0x146d79ffec00 size:192 presentcount:0+5 line:519 name:var%lpctz_(:)
+host:0x1abe5570 device:0x146599fffe00 size:32 presentcount:0+3 line:616 name:var%luseinv(:)
+host:0x1abe55c0 device:0x146d79ffe600 size:32 presentcount:0+3 line:616 name:var%at_gamma(:)
+host:0x1abe56e0 device:0x146d7bffe600 size:4840 presentcount:0+35 line:517 name:var
+host:0x1abe9c70 device:0x146565c00000 size:3538944 presentcount:0+1 line:499 name:var%tbli(:)
+host:0x1af4c3d0 device:0x146567c00000 size:3538944 presentcount:0+1 line:499 name:var%tbl(:)
+host:0x1b2b24f0 device:0x146583410000 size:1347840 presentcount:0+1 line:265 name:cdij(:,:,:,:)
+host:0x1b401920 device:0x146561c52c00 size:1347840 presentcount:0+2 line:265 name:cqij(:,:,:,:)
+host:0x1b6081f0 device:0x146599ffe800 size:4600 presentcount:0+3 line:614 name:var
+host:0x1b609410 device:0x145ce1bfce00 size:9216 presentcount:0+5 line:482 name:var%i2(:)
+host:0x1b60b840 device:0x1465835f8e00 size:9216 presentcount:0+5 line:482 name:var%i3(:)
+host:0x1b60dee0 device:0x146573fff200 size:20 presentcount:0+1 line:466 name:var%lps(:)
+host:0x1b6118c0 device:0x14658b800000 size:3538944 presentcount:0+1 line:499 name:var%tbli(:)
+host:0x1bac7c80 device:0x145ce1600000 size:1557696 presentcount:0+4 line:616 name:var%nindpw(:,:)
+host:0x1bc44170 device:0x145ce19e8a00 size:73728 presentcount:0+4 line:616 name:var%pl_index(:,:)
+host:0x1bc561a0 device:0x145ce1be8a00 size:73728 presentcount:0+4 line:616 name:var%pl_col(:,:)
+host:0x1bc6f130 device:0x145c5ba00000 size:6230784 presentcount:0+4 line:616 name:var%datake(:,:,:)
+host:0x1c2675d0 device:0x145ce1800000 size:1557696 presentcount:0+4 line:616 name:var%igx(:,:)
+host:0x1c3eae40 device:0x145ce1a00000 size:1557696 presentcount:0+4 line:616 name:var%igy(:,:)
+host:0x1c56e8c0 device:0x145ce1c00000 size:1557696 presentcount:0+4 line:616 name:var%igz(:,:)
+host:0x1cceb230 device:0x145c14c00000 size:6230784 presentcount:0+1 line:880 name:var%phase(:,:)
+host:0x1d2dc560 device:0x146573ffc800 size:9216 presentcount:0+2 line:482 name:var%i3(:)
+host:0x1d2de990 device:0x146573ff8000 size:9216 presentcount:0+4 line:482 name:var%index(:,:)
+host:0x1d2e0dc0 device:0x1465835fb200 size:9216 presentcount:0+4 line:482 name:var%i2(:)
+host:0x1d2e31f0 device:0x1465835fd600 size:9216 presentcount:0+4 line:482 name:var%i3(:)
+host:0x1d313230 device:0x145ce1bffe00 size:8 presentcount:0+1 line:430 name:var%lmax(:)
+host:0x1d3146f0 device:0x145ce19ffe00 size:264 presentcount:0+1 line:430 name:var%nlibase(:)
+host:0x1d31dc00 device:0x145ce19ffa00 size:260 presentcount:0+1 line:430 name:var%nlimax(:)
+host:0x1d36b650 device:0x146583405000 size:20000 presentcount:0+1 line:466 name:var%psprnl(:,:,:)
+host:0x1d375a90 device:0x146573ffec00 size:384 presentcount:0+1 line:464 name:var
+host:0x1d375c10 device:0x146573fff000 size:384 presentcount:0+1 line:464 name:var
+host:0x1d393800 device:0x146583400000 size:20000 presentcount:0+1 line:466 name:var%psprnl(:,:,:)
+host:0x1d3c5500 device:0x146573ffee00 size:20 presentcount:0+1 line:466 name:var%lps(:)
+host:0x1d4093b0 device:0x146599fca400 size:129600 presentcount:0+1 line:205 name:trans_matrix_fock(:,:,:,:)
+host:0x1d428e20 device:0x146d79fbc600 size:247000 presentcount:0+1 line:430 name:var%nli(:,:)
+host:0x1d46d300 device:0x145c14000000 size:10560216 presentcount:0+1 line:430 name:var%rproj(:)
+host:0x1de877f0 device:0x145ce1e00000 size:988000 presentcount:0+1 line:430 name:var%crrexp(:,:,:)
+host:0x1df9cbe0 device:0x146d79f5c400 size:98560 presentcount:0+8 line:746 name:var%celtot(:,:,:)
+host:0x1dfc9b70 device:0x146d79f44000 size:49280 presentcount:0+8 line:746 name:var%fertot(:,:,:)
+host:0x1dfd5c20 device:0x146d79f50200 size:49280 presentcount:0+4 line:746 name:var%auxtot(:,:,:)
+host:0x1dfe1cd0 device:0x146583571600 size:98560 presentcount:0+2 line:746 name:var%celtot(:,:,:)
+host:0x1dff9e00 device:0x146583559200 size:49280 presentcount:0+2 line:746 name:var%fertot(:,:,:)
+host:0x1e005eb0 device:0x146583565400 size:49280 presentcount:0+1 line:746 name:var%auxtot(:,:,:)
+host:0x1e011f60 device:0x1465835a1c00 size:98560 presentcount:0+2 line:746 name:var%celtot(:,:,:)
+host:0x1e02a090 device:0x146583589800 size:49280 presentcount:0+2 line:746 name:var%fertot(:,:,:)
+host:0x1e036140 device:0x146583595a00 size:49280 presentcount:0+1 line:746 name:var%auxtot(:,:,:)
+host:0x1e66a0d0 device:0x145c16e00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x1e9ca100 device:0x145ce1df0a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1e9d1f70 device:0x145ce1fe8a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1e9d9de0 device:0x145ce1ff0a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1e9e1c50 device:0x14658338c600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1e9e9ac0 device:0x146583394600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1e9f1930 device:0x14658339c600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1e9f97a0 device:0x1465833a4600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea01610 device:0x1465833ac600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea12c90 device:0x1465833b4600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea1ab00 device:0x1465833bc600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea22970 device:0x1465833c4600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea2a7e0 device:0x1465833cc600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea32650 device:0x1465833d4600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea3a4c0 device:0x146561d9be00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea448d0 device:0x146561da3e00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea4ef00 device:0x146561dabe00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea595e0 device:0x146561db3e00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea63ba0 device:0x146561dbbe00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ea6e280 device:0x146561dc3e00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1eac3530 device:0x14658340a000 size:7808 presentcount:0+1 line:586 name:buf1%win(:)
+host:0x1eac53e0 device:0x14658340c000 size:7808 presentcount:0+1 line:594 name:buf2%win(:)
+host:0x1eadd000 device:0x146599fea000 size:32320 presentcount:0+1 line:530 name:ctmp1(:)
+host:0x1ece3190 device:0x146599ff2000 size:32320 presentcount:0+1 line:530 name:ctmp2(:)
+host:0x1eceb000 device:0x145ce1de8a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1ed609d0 device:0x145ce5a00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x1eeddd30 device:0x145c17200000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x1f23ede0 device:0x145ce5c00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x1f3bc560 device:0x145c17600000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x1f71da30 device:0x146583200000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x1f89b5d0 device:0x145c17a00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x1fbfb600 device:0x145ce59e8a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc03470 device:0x145ce59f0a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc0b2e0 device:0x145ce5be8a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc13150 device:0x145ce5bf0a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc1afc0 device:0x145ce5de8a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc22e30 device:0x145ce5df0a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc2aca0 device:0x145ce17e8a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc32b10 device:0x145ce17f0a00 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc3a980 device:0x1465833e8000 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc427f0 device:0x1465833f0000 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc4a660 device:0x1465833f8000 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc524d0 device:0x14658337c600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x1fc5a340 device:0x146583384600 size:32320 presentcount:0+1 line:1089 name:w1%cproj(:)
+host:0x234d1310 device:0x145ce5800000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x24a1bd30 device:0x145d6be00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x24b99cf0 device:0x145c17e00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x24efba00 device:0x145d77e00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x25079de0 device:0x145c18200000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x253dbf10 device:0x145c18600000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2555a710 device:0x145c18800000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x258bcc60 device:0x145c18c00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x25a3ba90 device:0x145c19200000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2912fd10 device:0x145c15200000 size:28311552 presentcount:0+1 line:530 name:cwork(:)
+host:0x2ac32470 device:0x145c18e00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2af94ff0 device:0x145c19400000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2b2f7d80 device:0x145c19800000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2b4771e0 device:0x145c19a00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2b7da390 device:0x145c19e00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2b959c10 device:0x145c1a000000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2bcbd1e0 device:0x145c1a400000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2be3ce80 device:0x145c1a600000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2c1a0870 device:0x145c1aa00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2c320930 device:0x145c1ac00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2c684740 device:0x145c1b000000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2c804c20 device:0x145c1b200000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2cb68e50 device:0x145c1b600000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2cce9750 device:0x145c1b800000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2d04dda0 device:0x145c1bc00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2d1ceac0 device:0x145c1be00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2d533530 device:0x145c1c200000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2d6b4670 device:0x145c1c400000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2da19500 device:0x145c1c800000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2db9aa60 device:0x145c1ca00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2deffd10 device:0x145c1ce00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2e081690 device:0x145c1d000000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2e3e6d60 device:0x145c1d400000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2e568b00 device:0x145c1d600000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2e8ce5f0 device:0x145c1da00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2ea507b0 device:0x145c1dc00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2edb66c0 device:0x145c1e000000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2ef38ca0 device:0x145c1e200000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2f29efd0 device:0x145c1e600000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2f4219d0 device:0x145c1e800000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2f788120 device:0x145c1ec00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2f90af40 device:0x145c1ee00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x2fc71ab0 device:0x145c1f200000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x2fdf4cf0 device:0x145c1f400000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x3015bc80 device:0x145c1f800000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x302df2e0 device:0x145c1fa00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x30646690 device:0x145c1fe00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x307ca110 device:0x145c20000000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x30b318e0 device:0x145c20400000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x30cb5780 device:0x145c20600000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x3101d370 device:0x145c20a00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x311a1630 device:0x145c20c00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x31509640 device:0x145c21000000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x3168dd20 device:0x145c21200000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x319f6150 device:0x145c21600000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x31b72640 device:0x145c21800000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x31ed2880 device:0x145c21c00000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x3204f190 device:0x145c21e00000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x323af7f0 device:0x145c22200000 size:1557696 presentcount:0+1 line:1089 name:w1%cptwfp(:)
+host:0x3252c520 device:0x145c22400000 size:3538944 presentcount:0+1 line:1089 name:w1%cr(:)
+host:0x14556011b000 device:0x145324000000 size:9595407360 presentcount:0+2 line:542 name:wace%cptwfp(:,:,:,:)
+host:0x14659f8d3e80 device:0x145e1a000000 size:75891200 presentcount:0+1 line:272 name:chf(:,:,:,:)
+host:0x1465a4139c70 device:0x145e14000000 size:75891200 presentcount:0+1 line:272 name:cham(:,:,:,:)
+host:0x1465a899ea60 device:0x146568000000 size:199091200 presentcount:0+1 line:746 name:var%cproj(:,:,:,:)
+host:0x1465b4781850 device:0x145e2e000000 size:9595407360 presentcount:0+1 line:746 name:var%cptwfp(:,:,:,:)
+host:0x1467f066b640 device:0x146574000000 size:199091200 presentcount:0+1 line:746 name:var%cproj(:,:,:,:)
+host:0x1467fc44e430 device:0x14606a000000 size:9595407360 presentcount:0+1 line:746 name:var%cptwfp(:,:,:,:)
+host:0x146a38338220 device:0x14658e000000 size:199091200 presentcount:0+4 line:746 name:var%cproj(:,:,:,:)
+host:0x146a4411b010 device:0x1462a6000000 size:9595407360 presentcount:0+4 line:746 name:var%cptwfp(:,:,:,:)
+host:0x146c8217b440 device:0x146c80000000 size:32000000 presentcount:1+0 line:119 name:ssplines_s_rho
+host:0x146c86a76cf0 device:0x145e20000000 size:226492416 presentcount:0+1 line:266 name:cstrf(:,:)
+host:0x146cf417b230 device:0x146c84000000 size:32000000 presentcount:1+0 line:119 name:ssplines_rho_s
+host:0x146d1ca12020 device:0x146cfa000000 size:32000000 presentcount:1+0 line:119 name:fs_rs
+host:0x146d1e89c8d0 device:0x146554000000 size:113246208 presentcount:0+1 line:266 name:dencor(:)
+host:0x146d254a24b0 device:0x14655c000000 size:56623104 presentcount:0+1 line:265 name:sv(:,:)
+host:0x146d362ab7d0 device:0x146560000000 size:28311552 presentcount:0+1 line:499 name:var%tbli(:)
+host:0x146d398b33b0 device:0x146562000000 size:28311552 presentcount:0+1 line:499 name:var%tbl(:)
+host:0x146d3b3b71a0 device:0x146564000000 size:28311552 presentcount:0+1 line:499 name:var%tbli(:)
+host:0x146d3e9bdd80 device:0x146566000000 size:28311552 presentcount:0+1 line:499 name:var%tbl(:)
+host:0x146d404bff10 device:0x146584000000 size:112154112 presentcount:0+2 line:405 name:var%qproj(:,:,:,:,:)
+host:0x146d46fb7d00 device:0x146580000000 size:50625120 presentcount:0+2 line:405 name:var%crexp(:,:)
+host:0x7fffc4cda080 device:0x146d7dfffc00 size:488 presentcount:0+1 line:532 name:wq
+host:0x7fffc4cda380 device:0x146d4dbfee00 size:2176 presentcount:0+1 line:742 name:var
+host:0x7fffc4cdac00 device:0x146d4dbfe400 size:2176 presentcount:0+1 line:742 name:var
+host:0x7fffc4cdb480 device:0x146d79ff9600 size:2888 presentcount:0+2 line:682 name:var
+host:0x7fffc4cdbfd0 device:0x146d79ffa200 size:2888 presentcount:0+33 line:682 name:var
+allocated block device:0x145324000000 size:9595407360 thread:1
+allocated block device:0x145c14000000 size:10560512 thread:1
+allocated block device:0x145c14c00000 size:6231040 thread:1
+allocated block device:0x145c15200000 size:28311552 thread:1
+allocated block device:0x145c16e00000 size:3538944 thread:1
+allocated block device:0x145c17200000 size:3538944 thread:1
+allocated block device:0x145c17600000 size:3538944 thread:1
+allocated block device:0x145c17a00000 size:3538944 thread:1
+allocated block device:0x145c17e00000 size:3538944 thread:1
+allocated block device:0x145c18200000 size:3538944 thread:1
+allocated block device:0x145c18600000 size:1558016 thread:1
+allocated block device:0x145c18800000 size:3538944 thread:1
+allocated block device:0x145c18c00000 size:1558016 thread:1
+allocated block device:0x145c18e00000 size:3538944 thread:1
+allocated block device:0x145c19200000 size:1558016 thread:1
+allocated block device:0x145c19400000 size:3538944 thread:1
+allocated block device:0x145c19800000 size:1558016 thread:1
+allocated block device:0x145c19a00000 size:3538944 thread:1
+allocated block device:0x145c19e00000 size:1558016 thread:1
+allocated block device:0x145c1a000000 size:3538944 thread:1
+allocated block device:0x145c1a400000 size:1558016 thread:1
+allocated block device:0x145c1a600000 size:3538944 thread:1
+allocated block device:0x145c1aa00000 size:1558016 thread:1
+allocated block device:0x145c1ac00000 size:3538944 thread:1
+allocated block device:0x145c1b000000 size:1558016 thread:1
+allocated block device:0x145c1b200000 size:3538944 thread:1
+allocated block device:0x145c1b600000 size:1558016 thread:1
+allocated block device:0x145c1b800000 size:3538944 thread:1
+allocated block device:0x145c1bc00000 size:1558016 thread:1
+allocated block device:0x145c1be00000 size:3538944 thread:1
+allocated block device:0x145c1c200000 size:1558016 thread:1
+allocated block device:0x145c1c400000 size:3538944 thread:1
+allocated block device:0x145c1c800000 size:1558016 thread:1
+allocated block device:0x145c1ca00000 size:3538944 thread:1
+allocated block device:0x145c1ce00000 size:1558016 thread:1
+allocated block device:0x145c1d000000 size:3538944 thread:1
+allocated block device:0x145c1d400000 size:1558016 thread:1
+allocated block device:0x145c1d600000 size:3538944 thread:1
+allocated block device:0x145c1da00000 size:1558016 thread:1
+allocated block device:0x145c1dc00000 size:3538944 thread:1
+allocated block device:0x145c1e000000 size:1558016 thread:1
+allocated block device:0x145c1e200000 size:3538944 thread:1
+allocated block device:0x145c1e600000 size:1558016 thread:1
+allocated block device:0x145c1e800000 size:3538944 thread:1
+allocated block device:0x145c1ec00000 size:1558016 thread:1
+allocated block device:0x145c1ee00000 size:3538944 thread:1
+allocated block device:0x145c1f200000 size:1558016 thread:1
+allocated block device:0x145c1f400000 size:3538944 thread:1
+allocated block device:0x145c1f800000 size:1558016 thread:1
+allocated block device:0x145c1fa00000 size:3538944 thread:1
+allocated block device:0x145c1fe00000 size:1558016 thread:1
+allocated block device:0x145c20000000 size:3538944 thread:1
+allocated block device:0x145c20400000 size:1558016 thread:1
+allocated block device:0x145c20600000 size:3538944 thread:1
+allocated block device:0x145c20a00000 size:1558016 thread:1
+allocated block device:0x145c20c00000 size:3538944 thread:1
+allocated block device:0x145c21000000 size:1558016 thread:1
+allocated block device:0x145c21200000 size:3538944 thread:1
+allocated block device:0x145c21600000 size:1558016 thread:1
+allocated block device:0x145c21800000 size:3538944 thread:1
+allocated block device:0x145c21c00000 size:1558016 thread:1
+allocated block device:0x145c21e00000 size:3538944 thread:1
+allocated block device:0x145c22200000 size:1558016 thread:1
+allocated block device:0x145c22400000 size:3538944 thread:1
+allocated block device:0x145c5ba00000 size:6231040 thread:1
+allocated block device:0x145ce1600000 size:1558016 thread:1
+allocated block device:0x145ce17e8a00 size:32768 thread:1
+allocated block device:0x145ce17f0a00 size:32768 thread:1
+allocated block device:0x145ce1800000 size:1558016 thread:1
+allocated block device:0x145ce19e8a00 size:73728 thread:1
+allocated block device:0x145ce19faa00 size:9216 thread:1
+allocated block device:0x145ce19fce00 size:9216 thread:1
+allocated block device:0x145ce19ff200 size:512 thread:1
+allocated block device:0x145ce19ff400 size:512 thread:1
+allocated block device:0x145ce19ff600 size:512 thread:1
+allocated block device:0x145ce19ff800 size:512 thread:1
+allocated block device:0x145ce19ffa00 size:512 thread:1
+allocated block device:0x145ce19ffc00 size:512 thread:1
+allocated block device:0x145ce19ffe00 size:512 thread:1
+allocated block device:0x145ce1a00000 size:1558016 thread:1
+allocated block device:0x145ce1be8a00 size:73728 thread:1
+allocated block device:0x145ce1bfaa00 size:9216 thread:1
+allocated block device:0x145ce1bfce00 size:9216 thread:1
+allocated block device:0x145ce1bff200 size:3072 thread:1
+allocated block device:0x145ce1bffe00 size:512 thread:1
+allocated block device:0x145ce1c00000 size:1558016 thread:1
+allocated block device:0x145ce1de8a00 size:32768 thread:1
+allocated block device:0x145ce1df0a00 size:32768 thread:1
+allocated block device:0x145ce1e00000 size:988160 thread:1
+allocated block device:0x145ce1fe8a00 size:32768 thread:1
+allocated block device:0x145ce1ff0a00 size:32768 thread:1
+allocated block device:0x145ce5800000 size:1558016 thread:1
+allocated block device:0x145ce59e8a00 size:32768 thread:1
+allocated block device:0x145ce59f0a00 size:32768 thread:1
+allocated block device:0x145ce5a00000 size:1558016 thread:1
+allocated block device:0x145ce5be8a00 size:32768 thread:1
+allocated block device:0x145ce5bf0a00 size:32768 thread:1
+allocated block device:0x145ce5c00000 size:1558016 thread:1
+allocated block device:0x145ce5de8a00 size:32768 thread:1
+allocated block device:0x145ce5df0a00 size:32768 thread:1
+allocated block device:0x145d6be00000 size:1558016 thread:1
+allocated block device:0x145d77e00000 size:1558016 thread:1
+allocated block device:0x145e14000000 size:75891200 thread:1
+allocated block device:0x145e1a000000 size:75891200 thread:1
+allocated block device:0x145e20000000 size:226492416 thread:1
+allocated block device:0x145e2e000000 size:9595407360 thread:1
+allocated block device:0x14606a000000 size:9595407360 thread:1
+allocated block device:0x1462a6000000 size:9595407360 thread:1
+allocated block device:0x146554000000 size:113246208 thread:1
+allocated block device:0x14655c000000 size:56623104 thread:1
+allocated block device:0x146560000000 size:28311552 thread:1
+allocated block device:0x146561c00000 size:36864 thread:1
+allocated block device:0x146561c09000 size:36864 thread:1
+allocated block device:0x146561c12000 size:36864 thread:1
+allocated block device:0x146561c1b000 size:147456 thread:1
+allocated block device:0x146561c3f000 size:40448 thread:1
+allocated block device:0x146561c48e00 size:40448 thread:1
+allocated block device:0x146561c52c00 size:1348096 thread:1
+allocated block device:0x146561d9be00 size:32768 thread:1
+allocated block device:0x146561da3e00 size:32768 thread:1
+allocated block device:0x146561dabe00 size:32768 thread:1
+allocated block device:0x146561db3e00 size:32768 thread:1
+allocated block device:0x146561dbbe00 size:32768 thread:1
+allocated block device:0x146561dc3e00 size:32768 thread:1
+allocated block device:0x146562000000 size:28311552 thread:1
+allocated block device:0x146563c00000 size:3538944 thread:1
+allocated block device:0x146564000000 size:28311552 thread:1
+allocated block device:0x146565c00000 size:3538944 thread:1
+allocated block device:0x146566000000 size:28311552 thread:1
+allocated block device:0x146567c00000 size:3538944 thread:1
+allocated block device:0x146568000000 size:199091200 thread:1
+allocated block device:0x146573e00000 size:147456 thread:1
+allocated block device:0x146573e24000 size:147456 thread:1
+allocated block device:0x146573e48000 size:589824 thread:1
+allocated block device:0x146573ed8000 size:589824 thread:1
+allocated block device:0x146573f68000 size:147456 thread:1
+allocated block device:0x146573f8c000 size:147456 thread:1
+allocated block device:0x146573fb0000 size:147456 thread:1
+allocated block device:0x146573fd4000 size:147456 thread:1
+allocated block device:0x146573ff8000 size:9216 thread:1
+allocated block device:0x146573ffa400 size:9216 thread:1
+allocated block device:0x146573ffc800 size:9216 thread:1
+allocated block device:0x146573ffec00 size:512 thread:1
+allocated block device:0x146573ffee00 size:512 thread:1
+allocated block device:0x146573fff000 size:512 thread:1
+allocated block device:0x146573fff200 size:512 thread:1
+allocated block device:0x146573fff400 size:3072 thread:1
+allocated block device:0x146574000000 size:199091200 thread:1
+allocated block device:0x146580000000 size:50625536 thread:1
+allocated block device:0x146583200000 size:1558016 thread:1
+allocated block device:0x14658337c600 size:32768 thread:1
+allocated block device:0x146583384600 size:32768 thread:1
+allocated block device:0x14658338c600 size:32768 thread:1
+allocated block device:0x146583394600 size:32768 thread:1
+allocated block device:0x14658339c600 size:32768 thread:1
+allocated block device:0x1465833a4600 size:32768 thread:1
+allocated block device:0x1465833ac600 size:32768 thread:1
+allocated block device:0x1465833b4600 size:32768 thread:1
+allocated block device:0x1465833bc600 size:32768 thread:1
+allocated block device:0x1465833c4600 size:32768 thread:1
+allocated block device:0x1465833cc600 size:32768 thread:1
+allocated block device:0x1465833d4600 size:32768 thread:1
+allocated block device:0x1465833e0000 size:32768 thread:1
+allocated block device:0x1465833e8000 size:32768 thread:1
+allocated block device:0x1465833f0000 size:32768 thread:1
+allocated block device:0x1465833f8000 size:32768 thread:1
+allocated block device:0x146583400000 size:20480 thread:1
+allocated block device:0x146583405000 size:20480 thread:1
+allocated block device:0x14658340a000 size:8192 thread:1
+allocated block device:0x14658340c000 size:8192 thread:1
+allocated block device:0x146583410000 size:1348096 thread:1
+allocated block device:0x146583559200 size:49664 thread:1
+allocated block device:0x146583565400 size:49664 thread:1
+allocated block device:0x146583571600 size:98816 thread:1
+allocated block device:0x146583589800 size:49664 thread:1
+allocated block device:0x146583595a00 size:49664 thread:1
+allocated block device:0x1465835a1c00 size:98816 thread:1
+allocated block device:0x1465835b9e00 size:147456 thread:1
+allocated block device:0x1465835dde00 size:36864 thread:1
+allocated block device:0x1465835e6e00 size:36864 thread:1
+allocated block device:0x1465835efe00 size:36864 thread:1
+allocated block device:0x1465835f8e00 size:9216 thread:1
+allocated block device:0x1465835fb200 size:9216 thread:1
+allocated block device:0x1465835fd600 size:9216 thread:1
+allocated block device:0x1465835ffa00 size:512 thread:1
+allocated block device:0x1465835ffc00 size:512 thread:1
+allocated block device:0x1465835ffe00 size:512 thread:1
+allocated block device:0x146584000000 size:112154112 thread:1
+allocated block device:0x14658b800000 size:3538944 thread:1
+allocated block device:0x14658c000000 size:6231040 thread:1
+allocated block device:0x14658e000000 size:199091200 thread:1
+allocated block device:0x146599e00000 size:294912 thread:1
+allocated block device:0x146599e48000 size:1558016 thread:1
+allocated block device:0x146599fc4600 size:24064 thread:1
+allocated block device:0x146599fca400 size:130048 thread:1
+allocated block device:0x146599fea000 size:32768 thread:1
+allocated block device:0x146599ff2000 size:32768 thread:1
+allocated block device:0x146599ffe800 size:4608 thread:1
+allocated block device:0x146599fffa00 size:512 thread:1
+allocated block device:0x146599fffc00 size:512 thread:1
+allocated block device:0x146599fffe00 size:512 thread:1
+allocated block device:0x146c80000000 size:32000000 thread:1
+allocated block device:0x146c84000000 size:32000000 thread:1
+allocated block device:0x146cfa000000 size:32000000 thread:1
+allocated block device:0x146d4b9f4000 size:36864 thread:1
+allocated block device:0x146d4b9fd000 size:5120 thread:1
+allocated block device:0x146d4b9fe400 size:1024 thread:1
+allocated block device:0x146d4b9fe800 size:1024 thread:1
+allocated block device:0x146d4b9fec00 size:1024 thread:1
+allocated block device:0x146d4b9ff000 size:1024 thread:1
+allocated block device:0x146d4b9ff400 size:1024 thread:1
+allocated block device:0x146d4b9ff800 size:1024 thread:1
+allocated block device:0x146d4b9ffc00 size:512 thread:1
+allocated block device:0x146d4b9ffe00 size:512 thread:1
+allocated block device:0x146d4bdf4000 size:36864 thread:1
+allocated block device:0x146d4bdfd000 size:512 thread:1
+allocated block device:0x146d4bdfd200 size:512 thread:1
+allocated block device:0x146d4bdfd400 size:512 thread:1
+allocated block device:0x146d4bdfd600 size:512 thread:1
+allocated block device:0x146d4bdfd800 size:5120 thread:1
+allocated block device:0x146d4bdfec00 size:512 thread:1
+allocated block device:0x146d4bdfee00 size:512 thread:1
+allocated block device:0x146d4bdff000 size:512 thread:1
+allocated block device:0x146d4bdff200 size:512 thread:1
+allocated block device:0x146d4bdff400 size:512 thread:1
+allocated block device:0x146d4bdff600 size:512 thread:1
+allocated block device:0x146d4bdff800 size:512 thread:1
+allocated block device:0x146d4bdffa00 size:512 thread:1
+allocated block device:0x146d4bdffc00 size:512 thread:1
+allocated block device:0x146d4bdffe00 size:512 thread:1
+allocated block device:0x146d4d1fde00 size:5120 thread:1
+allocated block device:0x146d4d1ff200 size:512 thread:1
+allocated block device:0x146d4d1ff400 size:512 thread:1
+allocated block device:0x146d4d1ff600 size:512 thread:1
+allocated block device:0x146d4d1ff800 size:512 thread:1
+allocated block device:0x146d4d1ffa00 size:512 thread:1
+allocated block device:0x146d4d1ffc00 size:512 thread:1
+allocated block device:0x146d4d1ffe00 size:512 thread:1
+allocated block device:0x146d4dbf4000 size:36864 thread:1
+allocated block device:0x146d4dbfd000 size:512 thread:1
+allocated block device:0x146d4dbfd200 size:512 thread:1
+allocated block device:0x146d4dbfd400 size:512 thread:1
+allocated block device:0x146d4dbfd600 size:512 thread:1
+allocated block device:0x146d4dbfd800 size:512 thread:1
+allocated block device:0x146d4dbfda00 size:512 thread:1
+allocated block device:0x146d4dbfdc00 size:512 thread:1
+allocated block device:0x146d4dbfde00 size:512 thread:1
+allocated block device:0x146d4dbfe000 size:1024 thread:1
+allocated block device:0x146d4dbfe400 size:2560 thread:1
+allocated block device:0x146d4dbfee00 size:2560 thread:1
+allocated block device:0x146d4dff4000 size:36864 thread:1
+allocated block device:0x146d4dffd000 size:8192 thread:1
+allocated block device:0x146d4dfff000 size:512 thread:1
+allocated block device:0x146d4dfff200 size:3072 thread:1
+allocated block device:0x146d4dfffe00 size:512 thread:1
+allocated block device:0x146d73ff6000 size:36864 thread:1
+allocated block device:0x146d73fff000 size:2048 thread:1
+allocated block device:0x146d73fff800 size:512 thread:1
+allocated block device:0x146d73fffa00 size:512 thread:1
+allocated block device:0x146d73fffc00 size:512 thread:1
+allocated block device:0x146d73fffe00 size:512 thread:1
+allocated block device:0x146d75ff8000 size:2560 thread:1
+allocated block device:0x146d75ff8a00 size:4608 thread:1
+allocated block device:0x146d75ff9c00 size:512 thread:1
+allocated block device:0x146d75ff9e00 size:512 thread:1
+allocated block device:0x146d75ffa000 size:512 thread:1
+allocated block device:0x146d75ffa200 size:512 thread:1
+allocated block device:0x146d75ffa400 size:512 thread:1
+allocated block device:0x146d75ffa600 size:512 thread:1
+allocated block device:0x146d75ffa800 size:512 thread:1
+allocated block device:0x146d75ffaa00 size:512 thread:1
+allocated block device:0x146d75ffac00 size:512 thread:1
+allocated block device:0x146d75ffae00 size:512 thread:1
+allocated block device:0x146d75ffb000 size:512 thread:1
+allocated block device:0x146d75ffb200 size:512 thread:1
+allocated block device:0x146d75ffb400 size:512 thread:1
+allocated block device:0x146d75ffb600 size:512 thread:1
+allocated block device:0x146d75ffb800 size:512 thread:1
+allocated block device:0x146d75ffba00 size:512 thread:1
+allocated block device:0x146d75ffbc00 size:5120 thread:1
+allocated block device:0x146d75ffd000 size:512 thread:1
+allocated block device:0x146d75ffd200 size:512 thread:1
+allocated block device:0x146d75ffd400 size:512 thread:1
+allocated block device:0x146d75ffd600 size:512 thread:1
+allocated block device:0x146d75ffd800 size:512 thread:1
+allocated block device:0x146d75ffda00 size:512 thread:1
+allocated block device:0x146d75ffdc00 size:2048 thread:1
+allocated block device:0x146d75ffe400 size:1024 thread:1
+allocated block device:0x146d75ffe800 size:3072 thread:1
+allocated block device:0x146d75fff400 size:512 thread:1
+allocated block device:0x146d75fff600 size:512 thread:1
+allocated block device:0x146d75fff800 size:512 thread:1
+allocated block device:0x146d75fffa00 size:512 thread:1
+allocated block device:0x146d75fffc00 size:512 thread:1
+allocated block device:0x146d75fffe00 size:512 thread:1
+allocated block device:0x146d77ff8000 size:24064 thread:1
+allocated block device:0x146d77ffde00 size:512 thread:1
+allocated block device:0x146d77ffe000 size:512 thread:1
+allocated block device:0x146d77ffe200 size:512 thread:1
+allocated block device:0x146d77ffe400 size:512 thread:1
+allocated block device:0x146d77ffe600 size:3072 thread:1
+allocated block device:0x146d77fff200 size:512 thread:1
+allocated block device:0x146d77fff400 size:3072 thread:1
+allocated block device:0x146d79f44000 size:49664 thread:1
+allocated block device:0x146d79f50200 size:49664 thread:1
+allocated block device:0x146d79f5c400 size:98816 thread:1
+allocated block device:0x146d79f74600 size:294912 thread:1
+allocated block device:0x146d79fbc600 size:247296 thread:1
+allocated block device:0x146d79ff8c00 size:2560 thread:1
+allocated block device:0x146d79ff9600 size:3072 thread:1
+allocated block device:0x146d79ffa200 size:3072 thread:1
+allocated block device:0x146d79ffc600 size:8192 thread:1
+allocated block device:0x146d79ffe600 size:512 thread:1
+allocated block device:0x146d79ffe800 size:512 thread:1
+allocated block device:0x146d79ffea00 size:512 thread:1
+allocated block device:0x146d79ffec00 size:512 thread:1
+allocated block device:0x146d79ffee00 size:512 thread:1
+allocated block device:0x146d79fff000 size:512 thread:1
+allocated block device:0x146d79fff200 size:2560 thread:1
+allocated block device:0x146d79fffc00 size:512 thread:1
+allocated block device:0x146d79fffe00 size:512 thread:1
+allocated block device:0x146d7be00000 size:1558016 thread:1
+allocated block device:0x146d7bffc600 size:8192 thread:1
+allocated block device:0x146d7bffe600 size:5120 thread:1
+allocated block device:0x146d7bfffa00 size:512 thread:1
+allocated block device:0x146d7bfffc00 size:512 thread:1
+allocated block device:0x146d7bfffe00 size:512 thread:1
+allocated block device:0x146d7de00000 size:1558016 thread:1
+allocated block device:0x146d7dffc600 size:8192 thread:1
+allocated block device:0x146d7dffe600 size:512 thread:1
+allocated block device:0x146d7dffe800 size:512 thread:1
+allocated block device:0x146d7dffea00 size:512 thread:1
+allocated block device:0x146d7dffec00 size:2560 thread:1
+allocated block device:0x146d7dfff600 size:512 thread:1
+allocated block device:0x146d7dfff800 size:512 thread:1
+allocated block device:0x146d7dfffa00 size:512 thread:1
+allocated block device:0x146d7dfffc00 size:512 thread:1
+allocated block device:0x146d7fe00000 size:1558016 thread:1
+allocated block device:0x146ddf3ff600 size:1024 thread:1
+allocated block device:0x146ddf3ffe00 size:512 thread:1
+Accelerator Fatal Error: call to cuMemAlloc returned error 2: Out of memory
+ File: /mnt/lustre/tursafs1/home/z01/z01/dc-turn1/software/VASP/vasp.6.5.1/build/ncl/fock_dbl.f90
+ Function: wrk_allocate:480
+ Line: 606
+
+srun: error: tu-c0r2n03: task 4: Exited with exit code 1
+srun: Terminating StepId=130406.0
+slurmstepd: error: *** STEP 130406.0 ON tu-c0r2n00 CANCELLED AT 2025-12-24T15:20:46 ***
+srun: error: tu-c0r2n03: tasks 5-7: Terminated
+srun: error: tu-c0r2n00: tasks 0-3: Terminated
+srun: error: tu-c0r2n09: tasks 12-15: Terminated
+srun: error: tu-c0r2n06: tasks 8-11: Terminated
+srun: Force Terminated StepId=130406.0
+++++ Power data
+#Date        Time         gpu    pwr  gtemp  mtemp 
+#YYYYMMDD    HH:MM:SS     Idx      W      C      C 
+ 20251224    15:17:13       0     51     29     29 
+ 20251224    15:17:13       1     54     29     29 
+ 20251224    15:17:13       2     53     29     30 
+ 20251224    15:17:13       3     51     29     29 
+ 20251224    15:17:43       0     71     31     30 
+ 20251224    15:17:43       1     77     30     30 
+ 20251224    15:17:43       2     74     30     31 
+ 20251224    15:17:43       3     72     30     30 
+ 20251224    15:18:13       0     71     31     30 
+ 20251224    15:18:13       1     77     30     30 
+ 20251224    15:18:13       2     74     30     31 
+ 20251224    15:18:13       3     71     30     30 
+ 20251224    15:18:43       0     71     31     30 
+ 20251224    15:18:43       1     77     30     30 
+ 20251224    15:18:43       2     74     30     31 
+ 20251224    15:18:43       3     72     30     30 
+ 20251224    15:19:13       0     71     31     30 
+ 20251224    15:19:13       1     77     30     30 
+ 20251224    15:19:13       2     74     30     31 
+ 20251224    15:19:13       3     71     30     30 
+ 20251224    15:19:43       0     73     31     30 
+ 20251224    15:19:43       1     79     31     30 
+ 20251224    15:19:43       2     76     31     31 
+ 20251224    15:19:43       3     74     31     30 
+ 20251224    15:20:13       0     88     39     36 
+ 20251224    15:20:13       1     92     39     38 
+ 20251224    15:20:13       2     89     41     40 
+ 20251224    15:20:13       3     84     40     37 
+ 20251224    15:20:43       0     70     31     31 
+ 20251224    15:20:43       1     75     31     31 
+ 20251224    15:20:43       2     74     31     32 
+ 20251224    15:20:43       3     72     31     31 
