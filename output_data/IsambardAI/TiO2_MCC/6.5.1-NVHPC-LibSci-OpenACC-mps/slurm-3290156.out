@@ -1,0 +1,29 @@
+rm: cannot remove 'WAVECAR': No such file or directory
+ running  256 mpi-ranks, with   17 threads/rank, on   16 nodes
+ distrk:  each k-point on  256 cores,    1 groups
+ distr:  one band on    1 cores,  256 groups
+ Offloading initialized ...   64 GPUs detected
+ WARNING: INIT_OFFLOAD: several MPI-ranks need to share a GPU, which is not
+     supported by NCCL. The use of NCCL will be switched off. To avoid this,
+     reduce the number of MPI-ranks: #-of-ranks <= #-of-GPUs (on every node!).
+
+slurmstepd: error: Detected 1 oom_kill event in StepId=3290156.0. Some of the step tasks have been OOM Killed.
+srun: error: nid011119: task 48: Out Of Memory
+srun: Terminating StepId=3290156.0
+slurmstepd: error: *** STEP 3290156.0 ON nid011116 CANCELLED AT 2026-03-23T15:42:10 ***
+srun: error: nid011131: tasks 208-223: Terminated
+srun: error: nid011132: tasks 224-239: Terminated
+srun: error: nid011118: tasks 32-47: Terminated
+srun: error: nid011128: tasks 160-175: Terminated
+srun: error: nid011130: tasks 192-207: Terminated
+srun: error: nid011126: tasks 144-159: Terminated
+srun: error: nid011124: tasks 112-127: Terminated
+srun: error: nid011116: tasks 0-15: Terminated
+srun: error: nid011129: tasks 176-191: Terminated
+srun: error: nid011122: tasks 96-111: Terminated
+srun: error: nid011120: tasks 64-79: Terminated
+srun: error: nid011117: tasks 16-31: Terminated
+srun: error: nid011125: tasks 128-143: Terminated
+srun: error: nid011121: tasks 80-95: Terminated
+srun: error: nid011133: tasks 240-255: Terminated
+srun: Force Terminated StepId=3290156.0

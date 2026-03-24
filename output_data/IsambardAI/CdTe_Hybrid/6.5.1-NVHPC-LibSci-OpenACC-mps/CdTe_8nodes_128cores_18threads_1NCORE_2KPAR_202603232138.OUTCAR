@@ -1,0 +1,28 @@
+++++ Slurm JobID = 3298503
+GTL_DEBUG: [64] cudaHostRegister: MPS client failed to connect to the MPS control daemon or the MPS server
+GTL_DEBUG: [64] cudaHostUnregister: MPS client failed to connect to the MPS control daemon or the MPS server
+/lus/lfs1aip2/projects/u6cb/benchmarks/VASP/CdTe_Hybrid/6.5.1-NVHPC-LibSci-mps/CdTe_18f7a42b-7913-40e1-9b3c-c538437d329d/../mps-wrapper.sh: line 24: 187356 Segmentation fault      (core dumped) numactl --membind=$numa_nodes "$@"
+srun: error: nid010798: task 64: Exited with exit code 139
+srun: Terminating StepId=3298503.0
+slurmstepd: error: *** STEP 3298503.0 ON nid010770 CANCELLED AT 2026-03-23T21:39:13 ***
+srun: error: nid010798: tasks 65-79: Terminated
+srun: error: nid010799: tasks 80-95: Terminated
+srun: error: nid010800: tasks 96-111: Terminated
+srun: error: nid010771: tasks 16-31: Terminated
+srun: error: nid010773: tasks 48-63: Terminated
+srun: error: nid010772: tasks 32-47: Terminated
+srun: error: nid010770: tasks 0-15: Terminated
+srun: error: nid010801: tasks 112-127: Terminated
+srun: Force Terminated StepId=3298503.0
+mv: cannot stat 'OUTCAR': No such file or directory
+++++ Power data
+#Date        Time         gpu    pwr  gtemp  mtemp 
+#YYYYMMDD    HH:MM:SS     Idx      W      C      C 
+ 20260323    21:38:42       0     84     32     40 
+ 20260323    21:38:42       1     90     35     43 
+ 20260323    21:38:42       2     93     34     44 
+ 20260323    21:38:42       3     81     32     41 
+ 20260323    21:39:12       0    130     34     42 
+ 20260323    21:39:12       1    140     37     43 
+ 20260323    21:39:12       2    141     36     44 
+ 20260323    21:39:12       3    127     34     41 

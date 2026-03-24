@@ -1,0 +1,320 @@
+rm: cannot remove 'WAVECAR': No such file or directory
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ -----------------------------------------------------------------------------
+|                     _     ____    _    _    _____     _                     |
+|                    | |   |  _ \  | |  | |  / ____|   | |                    |
+|                    | |   | |_) | | |  | | | |  __    | |                    |
+|                    |_|   |  _ <  | |  | | | | |_ |   |_|                    |
+|                     _    | |_) | | |__| | | |__| |    _                     |
+|                    (_)   |____/   \____/   \_____|   (_)                    |
+|                                                                             |
+|     internal error in: mpi.F  at line: 909                                  |
+|                                                                             |
+|     M_init_nccl: Error in ncclCommInitRank                                  |
+|                                                                             |
+|     If you are not a developer, you should not encounter this problem.      |
+|     Please submit a bug report.                                             |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ running   16 mpi-ranks, with   72 threads/rank, on    4 nodes
+ distrk:  each k-point on   16 cores,    1 groups
+ distr:  one band on    1 cores,   16 groups
+ Offloading initialized ...   16 GPUs detected
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+Warning: ieee_inexact is signaling
+    1
+srun: error: nid011302: task 13: Exited with exit code 1
+srun: Terminating StepId=3126694.0
+slurmstepd: error: *** STEP 3126694.0 ON nid011290 CANCELLED AT 2026-03-18T15:04:37 ***
+srun: error: nid011290: tasks 1-2: Exited with exit code 1
+srun: error: nid011295: tasks 5-6: Exited with exit code 1
+srun: error: nid011299: task 9: Exited with exit code 1
+srun: error: nid011290: tasks 0,3: Exited with exit code 1
+srun: error: nid011302: tasks 12,14-15: Exited with exit code 1
+srun: error: nid011295: tasks 4,7: Exited with exit code 1
+srun: error: nid011299: tasks 8,10-11: Exited with exit code 1
+mv: cannot stat 'OUTCAR': No such file or directory

@@ -1,0 +1,70 @@
+rm: cannot remove 'WAVECAR': No such file or directory
+ running  128 mpi-ranks, with   35 threads/rank, on   16 nodes
+ distrk:  each k-point on  128 cores,    1 groups
+ distr:  one band on    1 cores,  128 groups
+ Offloading initialized ...   64 GPUs detected
+ WARNING: INIT_OFFLOAD: several MPI-ranks need to share a GPU, which is not
+     supported by NCCL. The use of NCCL will be switched off. To avoid this,
+     reduce the number of MPI-ranks: #-of-ranks <= #-of-GPUs (on every node!).
+
+ vasp.6.5.1 10Mar25 (build Mar 18 2026 11:13:34) gamma-only                      
+ POSCAR found :  2 types and    1080 ions
+ scaLAPACK will be used selectively (only on CPU)
+ LDA part: xc-table for (Slater(with rela. corr.)+CA(PZ))
+ , standard interpolation
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ... GRIDC
+ FFT: planning ... GRID_SOFT
+ FFT: planning ... GRID
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+RMM:   1     0.137917866420E+06    0.13792E+06   -0.58431E+06  5248   0.217E+03
+RMM:   2     0.935637615782E+04   -0.12856E+06   -0.21022E+06  5248   0.597E+02
+RMM:   3     0.294988818246E+05    0.20143E+05   -0.45951E+05  5248   0.362E+02
+RMM:   4     0.185608763533E+05   -0.10938E+05   -0.15126E+05  5248   0.380E+02
+RMM:   5     0.100239431726E+05   -0.85369E+04   -0.77415E+04  5248   0.221E+02
+RMM:   6     0.415066101731E+04   -0.58733E+04   -0.46664E+04  5248   0.196E+02
+RMM:   7     0.994809508696E+02   -0.40512E+04   -0.37358E+04  5248   0.146E+02
+RMM:   8    -0.288955928657E+04   -0.29890E+04   -0.27191E+04  5248   0.143E+02
+RMM:   9    -0.585444574828E+04   -0.29649E+04   -0.28377E+04 19949   0.113E+02
+RMM:  10    -0.384151537292E+04    0.20129E+04   -0.49556E+02 20798   0.551E+01
+ -----------------------------------------------------------------------------
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|     The electronic self-consistency was not achieved in the given           |
+|     number of steps (NELM). The forces and other quantities evaluated       |
+|     might not be reliable so examine the results carefully. If you find     |
+|     spurious results, we suggest increasing NELM, if you were close to      |
+|     convergence or switching to a different ALGO or adjusting the           |
+|     density mixing parameters otherwise.                                    |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+/lus/lfs1aip2/projects/u6cb/benchmarks/VASP/TiO2_MCC/6.5.1-NVHPC-LibSci-OpenACC-mps/TiO2_12f97bfd-3f4d-4269-b427-3c872da15e12/../mps-wrapper.sh: line 24: 127221 Bus error               (core dumped) numactl --membind=$numa_nodes "$@"
+srun: error: nid011123: task 113: Exited with exit code 135
+srun: Terminating StepId=3252493.0
+slurmstepd: error: *** STEP 3252493.0 ON nid011103 CANCELLED AT 2026-03-21T08:33:13 ***
+srun: error: nid011123: tasks 112,114-119: Terminated
+srun: error: nid011109: tasks 24-31: Terminated
+srun: error: nid011108: tasks 16-23: Terminated
+srun: error: nid011112: tasks 40-47: Terminated
+srun: error: nid011117: tasks 64-71: Terminated
+srun: error: nid011113: tasks 48-55: Terminated
+srun: error: nid011118: tasks 72-79: Terminated
+srun: error: nid011110: tasks 32-39: Terminated
+srun: error: nid011121: tasks 96-103: Terminated
+srun: error: nid011103: tasks 0-7: Terminated
+srun: error: nid011106: tasks 8-15: Terminated
+srun: error: nid011115: tasks 56-63: Terminated
+srun: error: nid011122: tasks 104-111: Terminated
+srun: error: nid011120: tasks 88-95: Terminated
+srun: error: nid011124: tasks 120-127: Terminated
+srun: error: nid011119: tasks 80-87: Terminated
+srun: Force Terminated StepId=3252493.0

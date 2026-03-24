@@ -1,0 +1,118 @@
+rm: cannot remove 'WAVECAR': No such file or directory
+ running    8 mpi-ranks, with   72 threads/rank, on    2 nodes
+ distrk:  each k-point on    4 cores,    2 groups
+ distr:  one band on    1 cores,    4 groups
+ Offloading initialized ...    8 GPUs detected
+ vasp.6.5.1 10Mar25 (build Mar 18 2026 11:36:21) complex                         
+ POSCAR found type information on POSCAR CdTe
+ POSCAR found :  2 types and      65 ions
+ -----------------------------------------------------------------------------
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|     You requested a magnetic or noncollinear calculation, but did not       |
+|     specify the initial magnetic moment with the MAGMOM tag. Note that      |
+|     a default of 1 will be used for all atoms. This ferromagnetic setup     |
+|     may break the symmetry of the crystal, in particular it may rule        |
+|     out finding an antiferromagnetic solution. Thence, we recommend         |
+|     setting the initial magnetic moment manually or verifying carefully     |
+|     that this magnetic setup is desired.                                    |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ scaLAPACK will be used selectively (only on CPU)
+ -----------------------------------------------------------------------------
+|                                                                             |
+|               ----> ADVICE to this user running VASP <----                  |
+|                                                                             |
+|     You have a (more or less) 'large supercell' and for larger cells it     |
+|     might be more efficient to use real-space projection operators.         |
+|     Therefore, try LREAL= Auto in the INCAR file.                           |
+|     Mind: For very accurate calculation, you might also keep the            |
+|     reciprocal projection scheme (i.e. LREAL=.FALSE.).                      |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ LDA part: xc-table for (Slater+PW92), standard interpolation
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ... GRIDC
+ FFT: planning ... GRID_SOFT
+ FFT: planning ... GRID
+ WAVECAR not read
+ WARNING: chargedensity file is incomplete
+ entering main loop
+       N       E                     dE             d eps       ncg     rms           ort
+DAV:   1    -0.656189609540E+05   -0.65619E+05   -0.26578E+05  6176   0.124E+03  
+DAV:   2    -0.692116484133E+05   -0.35927E+04   -0.34803E+04  6176   0.311E+02  
+DAV:   3    -0.694466110082E+05   -0.23496E+03   -0.23283E+03  6176   0.721E+01  
+DAV:   4    -0.694548643311E+05   -0.82533E+01   -0.82360E+01  6176   0.120E+01  
+DAV:   5    -0.176945260254E+03    0.69278E+05   -0.36710E+02  6176   0.475E+01  
+SDA:   6    -0.184064819076E+03   -0.71196E+01   -0.36710E+02  6176   0.407E+02   0.000E+00
+ gam= 0.000 g(H,U,f)=  0.326E+02 0.813E+01 0.154E-02 ort(H,U,f) = 0.000E+00 0.000E+00 0.000E+00
+ gam= 0.000 trial= 0.400  step=  0.5076 mean=  0.4000
+ final diagonalization occupied
+ -----------------------------------------------------------------------------
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|     The electronic self-consistency was not achieved in the given           |
+|     number of steps (NELM). The forces and other quantities evaluated       |
+|     might not be reliable so examine the results carefully. If you find     |
+|     spurious results, we suggest increasing NELM, if you were close to      |
+|     convergence or switching to a different ALGO or adjusting the           |
+|     density mixing parameters otherwise.                                    |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+   1 F= -.18406482E+03 E0= -.18406164E+03  d E =-.635413E-02  mag=     0.1086     0.1086     0.1086
+ writing wavefunctions
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP
+Warning: ieee_invalid is signaling
+Warning: ieee_divide_by_zero is signaling
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+FORTRAN STOP

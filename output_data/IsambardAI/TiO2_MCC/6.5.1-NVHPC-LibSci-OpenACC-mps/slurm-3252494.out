@@ -1,0 +1,45 @@
+rm: cannot remove 'WAVECAR': No such file or directory
+ running 1024 mpi-ranks, with    8 threads/rank, on   32 nodes
+ distrk:  each k-point on 1024 cores,    1 groups
+ distr:  one band on    1 cores, 1024 groups
+ Offloading initialized ...  128 GPUs detected
+ WARNING: INIT_OFFLOAD: several MPI-ranks need to share a GPU, which is not
+     supported by NCCL. The use of NCCL will be switched off. To avoid this,
+     reduce the number of MPI-ranks: #-of-ranks <= #-of-GPUs (on every node!).
+
+slurmstepd: error: Detected 1 oom_kill event in StepId=3252494.0. Some of the step tasks have been OOM Killed.
+srun: error: nid010019: task 448: Out Of Memory
+srun: Terminating StepId=3252494.0
+slurmstepd: error: *** STEP 3252494.0 ON nid010000 CANCELLED AT 2026-03-21T10:31:01 ***
+srun: error: nid010015: tasks 320-351: Terminated
+srun: error: nid010020: tasks 480-511: Terminated
+srun: error: nid010010: tasks 192-223: Terminated
+srun: error: nid010018: tasks 416-447: Terminated
+srun: error: nid010033: tasks 864-895: Terminated
+srun: error: nid010005: tasks 128-159: Terminated
+srun: error: nid010023: tasks 576-607: Terminated
+srun: error: nid010014: tasks 288-319: Terminated
+srun: error: nid010021: tasks 512-543: Terminated
+srun: error: nid010024: tasks 608-639: Terminated
+srun: error: nid010022: tasks 544-575: Terminated
+srun: error: nid010025: tasks 640-671: Terminated
+srun: error: nid010032: tasks 832-863: Terminated
+srun: error: nid010003: tasks 64-95: Terminated
+srun: error: nid010004: tasks 96-127: Terminated
+srun: error: nid010026: tasks 672-703: Terminated
+srun: error: nid010029: tasks 768-799: Terminated
+srun: error: nid010000: tasks 0-31: Terminated
+srun: error: nid010001: tasks 32-63: Terminated
+srun: error: nid010017: tasks 384-415: Terminated
+srun: error: nid010028: tasks 736-767: Terminated
+srun: error: nid010013: tasks 256-287: Terminated
+srun: error: nid010007: tasks 160-191: Terminated
+srun: error: nid010036: tasks 960-991: Terminated
+srun: error: nid010011: tasks 224-255: Terminated
+srun: error: nid010031: tasks 800-831: Terminated
+srun: error: nid010016: tasks 352-383: Terminated
+srun: error: nid010035: tasks 928-959: Terminated
+srun: error: nid010034: tasks 896-927: Terminated
+srun: error: nid010037: tasks 992-1023: Terminated
+srun: error: nid010027: tasks 704-735: Terminated
+srun: Force Terminated StepId=3252494.0

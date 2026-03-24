@@ -1,0 +1,49 @@
+ running   64 mpi-ranks, with    8 threads/rank, on    2 nodes
+ distrk:  each k-point on    8 cores,    8 groups
+ distr:  one band on    1 cores,    8 groups
+ Offloading initialized ...    8 GPUs detected
+ WARNING: INIT_OFFLOAD: several MPI-ranks need to share a GPU, which is not
+     supported by NCCL. The use of NCCL will be switched off. To avoid this,
+     reduce the number of MPI-ranks: #-of-ranks <= #-of-GPUs (on every node!).
+
+ vasp.6.5.1 10Mar25 (build Mar 18 2026 11:36:21) complex                         
+ POSCAR found type information on POSCAR CdTe
+ POSCAR found :  2 types and      65 ions
+ -----------------------------------------------------------------------------
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|     You requested a magnetic or noncollinear calculation, but did not       |
+|     specify the initial magnetic moment with the MAGMOM tag. Note that      |
+|     a default of 1 will be used for all atoms. This ferromagnetic setup     |
+|     may break the symmetry of the crystal, in particular it may rule        |
+|     out finding an antiferromagnetic solution. Thence, we recommend         |
+|     setting the initial magnetic moment manually or verifying carefully     |
+|     that this magnetic setup is desired.                                    |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+ scaLAPACK will be used selectively (only on CPU)
+ -----------------------------------------------------------------------------
+|                                                                             |
+|               ----> ADVICE to this user running VASP <----                  |
+|                                                                             |
+|     You have a (more or less) 'large supercell' and for larger cells it     |
+|     might be more efficient to use real-space projection operators.         |
+|     Therefore, try LREAL= Auto in the INCAR file.                           |
+|     Mind: For very accurate calculation, you might also keep the            |
+|     reciprocal projection scheme (i.e. LREAL=.FALSE.).                      |
+|                                                                             |
+ -----------------------------------------------------------------------------
+
+slurmstepd: error: Detected 1 oom_kill event in StepId=3242135.0. Some of the step tasks have been OOM Killed.
+srun: error: nid010285: task 12: Out Of Memory
+srun: Terminating StepId=3242135.0
+slurmstepd: error: *** STEP 3242135.0 ON nid010285 CANCELLED AT 2026-03-20T11:29:33 ***
+srun: error: nid010286: tasks 32-63: Terminated
+srun: Force Terminated StepId=3242135.0

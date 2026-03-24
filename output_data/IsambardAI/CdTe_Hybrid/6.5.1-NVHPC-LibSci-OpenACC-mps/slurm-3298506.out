@@ -1,0 +1,16 @@
+GTL_DEBUG: [64] cudaHostRegister: MPS client failed to connect to the MPS control daemon or the MPS server
+GTL_DEBUG: [64] cudaHostUnregister: MPS client failed to connect to the MPS control daemon or the MPS server
+/lus/lfs1aip2/projects/u6cb/benchmarks/VASP/CdTe_Hybrid/6.5.1-NVHPC-LibSci-mps/CdTe_97f7e8bb-6abd-44e3-b18c-29f065d0be9f/../mps-wrapper.sh: line 24: 187934 Segmentation fault      (core dumped) numactl --membind=$numa_nodes "$@"
+srun: error: nid010798: task 64: Exited with exit code 139
+srun: Terminating StepId=3298506.0
+slurmstepd: error: *** STEP 3298506.0 ON nid010770 CANCELLED AT 2026-03-23T21:41:38 ***
+srun: error: nid010798: tasks 65-79: Terminated
+srun: error: nid010800: tasks 96-111: Terminated
+srun: error: nid010772: tasks 32-47: Terminated
+srun: error: nid010799: tasks 80-95: Terminated
+srun: error: nid010773: tasks 48-63: Terminated
+srun: error: nid010771: tasks 16-31: Terminated
+srun: error: nid010801: tasks 112-127: Terminated
+srun: error: nid010770: tasks 0-15: Terminated
+srun: Force Terminated StepId=3298506.0
+mv: cannot stat 'OUTCAR': No such file or directory

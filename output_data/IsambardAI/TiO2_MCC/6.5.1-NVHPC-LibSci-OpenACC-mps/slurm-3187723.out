@@ -1,0 +1,11 @@
+rm: cannot remove 'WAVECAR': No such file or directory
+ running  256 mpi-ranks, with    8 threads/rank, on    8 nodes
+ distrk:  each k-point on  256 cores,    1 groups
+ distr:  one band on    1 cores,  256 groups
+ Offloading initialized ...   32 GPUs detected
+ WARNING: INIT_OFFLOAD: several MPI-ranks need to share a GPU, which is not
+     supported by NCCL. The use of NCCL will be switched off. To avoid this,
+     reduce the number of MPI-ranks: #-of-ranks <= #-of-GPUs (on every node!).
+
+slurmstepd: error: *** STEP 3187723.0 ON nid010268 CANCELLED AT 2026-03-19T18:18:46 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 3187723 ON nid010268 CANCELLED AT 2026-03-19T18:18:46 DUE TO TIME LIMIT ***
